@@ -380,6 +380,13 @@ export const projects = [
     ],
     chapters: [
       {
+        title: 'In CAD',
+        blocks: [
+          'I modeled the trailer in SolidWorks: the shell, roof, windows and running gear.',
+          ['airstream-cad-model.png'],
+        ],
+      },
+      {
         title: 'As found',
         blocks: [
           'The trailer as it arrived, parked on the pad that would later sit under the pavilion.',
