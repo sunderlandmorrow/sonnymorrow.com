@@ -19,6 +19,7 @@ export const site = {
   video: 'https://www.youtube.com/watch?v=Dcu71gSOogg&t=421s',
 };
 
+// Each project can set  section: 'professional'  — anything else shows under Personal projects.
 export const projects = [
   {
     slug: 'earthbag-dome',

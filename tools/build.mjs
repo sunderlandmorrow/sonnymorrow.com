@@ -49,7 +49,8 @@ function header(prefix, current) {
   return `<header class="site-header">
   <a class="wordmark" href="${prefix}">${esc(site.name)}</a>
   <nav>
-    <a href="${prefix}#work"${current === 'work' ? ' aria-current="page"' : ''}>Work</a>
+    <a href="${prefix}#professional">Professional</a>
+    <a href="${prefix}#personal">Personal</a>
     <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><span></span></button>
   </nav>
 </header>`;
@@ -58,7 +59,6 @@ function header(prefix, current) {
 function footer(prefix) {
   return `<footer class="site-footer">
   <div class="wrap">
-    <p class="footer-big">Made by hand, documented by hand.</p>
     <div class="footer-row">
       <span>© ${year} ${esc(site.name)}</span>
       <span><a href="${prefix}#work">All projects</a> · <a href="${esc(site.video)}" target="_blank" rel="noopener">Dome on YouTube ↗</a></span>
@@ -105,18 +105,33 @@ function block(b, prefix) {
   return '';
 }
 
+// ---------- Sections ----------
+// Each project has section: 'personal' (default) or 'professional'.
+const sectionOf = (p) => p.section || 'personal';
+const SECTIONS = {
+  professional: {
+    id: 'professional', title: 'Professional work', label: 'Professional project',
+    blurb: 'Selected projects from my professional work.',
+    empty: 'Case studies from my professional work are on the way.',
+  },
+  personal: {
+    id: 'personal', title: 'Personal projects', label: 'Personal project',
+    blurb: 'Things I’ve designed and built on my own time — by hand, start to finish.',
+  },
+};
+const inSection = (key) => projects.filter((p) => sectionOf(p) === key);
+
 // ---------- Home ----------
 function home() {
   const prefix = '';
   const stats = [
-    [projects.length, 'projects documented'],
-    [projects.reduce((n, p) => n + p.chapters.reduce((m, c) => m + c.blocks.filter(Array.isArray).flat().length, 0), 0), 'build photos'],
-    [projects.reduce((n, p) => n + (p.parts?.length || 0), 0), 'parts replaced'],
-    ['1', 'dome, by hand'],
-  ];
-  const cards = projects
-    .map(
-      (p, i) => `<article class="card reveal">
+    [projects.length, 'projects total'],
+    [inSection('personal').length, 'personal'],
+    [inSection('professional').length, 'professional'],
+    [projects.filter((p) => p.status === 'in-progress').length, 'in progress'],
+  ].filter(([n, label]) => n > 0 && !(label === 'personal' && n === projects.length));
+  // Hides empty stats, and hides "personal" while it would just repeat the total.
+  const card = (p, i) => `<article class="card reveal">
     <a href="projects/${p.slug}/" class="card-link">
       <div class="card-img">${badge(p)}${cover(p.cover, prefix, { alt: p.title, sizes: '(min-width: 900px) 60vw, 100vw' })}</div>
       <div class="card-body">
@@ -127,9 +142,20 @@ function home() {
         <span class="more">${p.status === 'in-progress' ? 'Follow the build' : 'Read the build'} <span aria-hidden="true">→</span></span>
       </div>
     </a>
-  </article>`
-    )
-    .join('\n  ');
+  </article>`;
+  const sectionHtml = (key) => {
+    const sec = SECTIONS[key];
+    const list = inSection(key);
+    const body = list.length
+      ? list.map(card).join('\n  ')
+      : `<div class="section-empty reveal"><span class="badge">Coming soon</span><p>${esc(sec.empty)}</p></div>`;
+    return `<section id="${sec.id}" class="work wrap">
+  <header class="section-head"><h2 class="section-title">${sec.title}</h2><p>${esc(sec.blurb)}</p></header>
+  ${body}
+</section>`;
+  };
+  // Professional goes first once it has projects; until then it sits after personal.
+  const order = inSection('professional').length ? ['professional', 'personal'] : ['personal', 'professional'];
 
   return `${head({ title: `${site.name} — Projects`, description: site.intro, prefix, image: site.heroImage })}
 <body class="home">
@@ -151,10 +177,9 @@ ${header(prefix)}
   ${stats.map(([n, l]) => `<div><strong data-count="${n}">${n}</strong><span>${l}</span></div>`).join('\n  ')}
 </section>
 
-<section id="work" class="work wrap">
-  <h2 class="section-title">Selected work</h2>
-  ${cards}
-</section>
+<div id="work">
+${order.map(sectionHtml).join('\n')}
+</div>
 </main>
 ${footer(prefix)}`;
 }
@@ -216,7 +241,7 @@ ${header(prefix)}
 <section class="p-hero${p.hero ? '' : ' p-hero--empty'}">
   ${p.hero ? img(p.hero, prefix, { alt: p.title, eager: true }) : ''}
   <div class="p-hero-text wrap">
-    <span class="kicker">${pad(i + 1)} — ${esc(p.kicker)}</span>${badge(p)}
+    <span class="kicker">${SECTIONS[sectionOf(p)].label} · ${esc(p.kicker)}</span>${badge(p)}
     <h1>${esc(p.title)}</h1>
   </div>
 </section>

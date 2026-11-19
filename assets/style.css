@@ -270,3 +270,22 @@ em { font-style: italic; color: var(--accent); }
 .ph-video { cursor: default; }
 .ph-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .gallery.g1 .ph-video video { height: auto; max-height: 80vh; }
+
+/* ---------- Professional / Personal sections ---------- */
+.work + .work { padding-top: 0; }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 32px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: clamp(28px, 4vw, 56px); }
+.section-head .section-title { margin: 0; }
+.section-head p { margin: 0; color: var(--muted); max-width: 30em; font-size: 15px; }
+.section-empty { border: 1.5px dashed var(--line); border-radius: 16px; padding: clamp(28px, 5vw, 56px);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.section-empty p { margin: 0; font-family: var(--serif); font-size: clamp(20px, 2.2vw, 28px); font-weight: 350; color: var(--ink-2); }
+.site-header nav a + a { margin-left: -6px; }
+
+/* Center the dome in the arched hero (dome sits ~31% across the photo) */
+.hero-img img { object-position: 6% 50%; }
+@media (max-width: 900px) { .hero-img img { object-position: 0% 50%; } }
+
+/* Stats: as many columns as there are stats; footer without the big tagline */
+.stats { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.site-footer { padding-top: 28px; }
