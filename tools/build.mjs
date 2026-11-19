@@ -131,26 +131,28 @@ function home() {
     [projects.filter((p) => p.status === 'in-progress').length, 'in progress'],
   ].filter(([n, label]) => n > 0 && !(label === 'personal' && n === projects.length));
   // Hides empty stats, and hides "personal" while it would just repeat the total.
-  const card = (p, i) => `<article class="card reveal">
-    <a href="projects/${p.slug}/" class="card-link">
-      <div class="card-img">${badge(p)}${cover(p.cover, prefix, { alt: p.title, sizes: '(min-width: 900px) 60vw, 100vw' })}</div>
-      <div class="card-body">
-        <span class="num">${pad(i + 1)}</span>
-        <span class="kicker">${esc(p.kicker)}</span>
-        <h3>${esc(p.title)}</h3>
-        <p>${esc(p.summary)}</p>
-        <span class="more">${p.status === 'in-progress' ? 'Follow the build' : 'Read the build'} <span aria-hidden="true">→</span></span>
-      </div>
-    </a>
-  </article>`;
-  const sectionHtml = (key) => {
+  // Compact project tile for the home-page grid.
+  const tile = (p) => `<article class="tile reveal">
+      <a href="projects/${p.slug}/" class="tile-link">
+        <div class="tile-img">${badge(p)}${cover(p.cover, prefix, { alt: p.title, sizes: '(min-width: 760px) 600px, 100vw' })}</div>
+        <div class="tile-body">
+          <span class="kicker">${esc(p.kicker)}</span>
+          <h3>${esc(p.title)}</h3>
+          <p>${esc(p.summary)}</p>
+        </div>
+      </a>
+    </article>`;
+  const sectionHtml = (key, n) => {
     const sec = SECTIONS[key];
     const list = inSection(key);
     const body = list.length
-      ? list.map(card).join('\n  ')
+      ? `<div class="tile-grid">\n    ${list.map(tile).join('\n    ')}\n  </div>`
       : `<div class="section-empty reveal"><span class="badge">Coming soon</span><p>${esc(sec.empty)}</p></div>`;
     return `<section id="${sec.id}" class="work wrap">
-  <header class="section-head"><h2 class="section-title">${sec.title}</h2><p>${esc(sec.blurb)}</p></header>
+  <header class="section-head">
+    <div><span class="section-num">${pad(n + 1)}</span><h2 class="section-title">${sec.title}</h2></div>
+    <p>${esc(sec.blurb)}</p>
+  </header>
   ${body}
 </section>`;
   };
@@ -167,14 +169,13 @@ ${header(prefix)}
     <h1>Earth, brick <em>&amp;</em> iron —<br>built by hand.</h1>
     <p class="lede">${esc(site.intro)}</p>
     <a class="btn" href="#work">See the work <span aria-hidden="true">↓</span></a>
+    <ul class="hero-stats">
+      ${stats.map(([n, l]) => `<li><strong>${n}</strong> ${l}</li>`).join('\n      ')}
+    </ul>
   </div>
   <div class="hero-img">${img(site.heroImage, prefix, { alt: 'The finished earthbag dome under a flowering tree', eager: true, sizes: '(min-width: 900px) 55vw, 100vw' })}
     <span class="hero-tag">Earthbag dome, Grass Valley CA</span>
   </div>
-</section>
-
-<section class="stats wrap">
-  ${stats.map(([n, l]) => `<div><strong data-count="${n}">${n}</strong><span>${l}</span></div>`).join('\n  ')}
 </section>
 
 <div id="work">
@@ -241,6 +242,7 @@ ${header(prefix)}
 <section class="p-hero${p.hero ? '' : ' p-hero--empty'}">
   ${p.hero ? img(p.hero, prefix, { alt: p.title, eager: true }) : ''}
   <div class="p-hero-text wrap">
+    <a class="crumb" href="${prefix}#${SECTIONS[sectionOf(p)].id}">← ${SECTIONS[sectionOf(p)].title}</a>
     <span class="kicker">${SECTIONS[sectionOf(p)].label} · ${esc(p.kicker)}</span>${badge(p)}
     <h1>${esc(p.title)}</h1>
   </div>
