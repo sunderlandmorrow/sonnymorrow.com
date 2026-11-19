@@ -415,7 +415,9 @@ export const projects = [
       {
         title: 'Floor',
         blocks: [
-          'Then a new hardwood floor went down, running the full length of the trailer and scribed to the curve at each end. The wheel-well covers were painted to match the walls.',
+          'Then a new hardwood floor went down. I painted the subfloor white, then laid the strips one row at a time down the length of the trailer with a pneumatic flooring nailer, working out from the center toward the curved walls.',
+          ['airstream-floor-install-1.jpeg', 'airstream-floor-install-2.jpeg'],
+          'Finished, the floor runs the full length of the trailer and is scribed to the curve at each end. The wheel-well covers were painted to match the walls.',
           ['airstream-interior-white-oak-floor.jpeg'],
           { todo: 'Flooring species, how it was fit to the curves, and the finish.' },
         ],
@@ -498,10 +500,12 @@ export const projects = [
         title: 'Rafters & sheathing',
         blocks: [
           'Fourteen 2×12 rafters, each 235½″ long, sit on the beams with birdsmouth notches cut to the roof pitch. They’re spaced 24″ on center, with 2×12 fascia boards along the ends.',
+          'Raising them was a team job: one person up the ladder guiding each rafter onto the beams while two more pushed it up from below, with a ratchet strap to help hold it in place.',
+          ['pavilion-raising-rafter-1.jpeg', 'pavilion-raising-rafter-2.jpeg'],
           ['pavilion-dwg-rafter-layout.png', 'pavilion-dwg-rafter.png'],
           'The roof deck is ½″ sheathing laid in staggered rows and fastened with 8d ring-shank nails — 6″ apart along every panel edge and 12″ in the field. The underside is left exposed.',
           ['pavilion-dwg-sheathing-layout.png'],
-          { todo: 'Roofing material on top, and photos of the rafters and deck going on.' },
+          { todo: 'Roofing material on top, and photos of the deck going on.' },
         ],
       },
       {
