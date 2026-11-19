@@ -266,7 +266,7 @@ write('index.html', home());
 projects.forEach((p, i) => write(`projects/${p.slug}/index.html`, projectPage(p, i)));
 write('404.html', notFound());
 const cname = path.join(root, 'CNAME');
-if (site.useCustomDomain) write('CNAME', site.domain + '\n');
+if (site.useCustomDomain) write('CNAME', site.domain); // no trailing newline — matches what GitHub writes
 else if (fs.existsSync(cname)) fs.unlinkSync(cname);
 write('.nojekyll', '');
 
