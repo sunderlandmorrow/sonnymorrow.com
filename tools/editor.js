@@ -15,15 +15,31 @@
     .ed-toast.err { background: #8a2b1d; }
     body.ed-on :is(${TEXT}):hover { outline: 1px dashed #d0703f; outline-offset: 3px; cursor: text; }
     body.ed-on a { cursor: text; }
+    body.ed-noimg :is(img, video, .collage, .card-img, .gallery, .ph) { display: none !important; }
+    body.ed-noimg .p-hero { height: auto !important; min-height: 0 !important; margin-top: 0 !important; padding-top: 90px; background: #2b241d; }
+    body.ed-noimg .p-hero-text { position: static !important; }
+    body.ed-noimg .hero { grid-template-columns: 1fr !important; }
     [contenteditable] { outline: 2px solid #d0703f !important; outline-offset: 3px; background: rgb(208 112 63 / .08); }
   `;
   document.head.append(css);
 
   const bar = document.createElement('div');
   bar.className = 'ed-bar';
-  bar.innerHTML = '<button type="button" class="tog">Edit text</button><button type="button" class="pub">Publish</button>';
+  bar.innerHTML = '<button type="button" class="img"></button><button type="button" class="tog">Edit text</button><button type="button" class="pub">Publish</button>';
   document.body.append(bar);
   const tog = bar.querySelector('.tog');
+
+  // Hide images (local preview only) so you can focus on the text. Remembered between pages.
+  const imgBtn = bar.querySelector('.img');
+  function setImages(show) {
+    document.body.classList.toggle('ed-noimg', !show);
+    imgBtn.textContent = show ? 'Hide images' : 'Show images';
+    try { localStorage.setItem('ed-img', show ? 'show' : 'hide'); } catch {}
+  }
+  let imgPref = 'hide';
+  try { imgPref = localStorage.getItem('ed-img') || 'hide'; } catch {}
+  setImages(imgPref === 'show');
+  imgBtn.addEventListener('click', () => setImages(document.body.classList.contains('ed-noimg')));
 
   let toastTimer;
   function toast(msg, err) {

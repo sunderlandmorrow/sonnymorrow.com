@@ -42,7 +42,7 @@ export const projects = [
     title: 'Adobe Tea House',
     kicker: 'Earth architecture',
     summary:
-      'A 12-foot earthbag dome designed and built by hand after an apprenticeship at Cal-Earth Institute — now a tea house on Airbnb Experiences.',
+      'A 12\' diameter adobe dome designed and built by hand after an apprenticeship at Cal-Earth Institute — now a tea house on Airbnb Experiences.',
     cover: 'pic01.jpeg',
     hero: 'pic01.jpeg',
     meta: [
@@ -138,7 +138,7 @@ export const projects = [
     title: 'Mercedes 300D',
     kicker: 'Mechanical restoration',
     summary:
-      'A 1984 Mercedes 300D with 230k miles, pulled engine-out, resealed, rebearinged and put back together leak-free.',
+      'A 1984 Mercedes 300D with 230k miles, that I pulled the engine & transmission out of, refurbished and put it all back together.',
     cover: '2.1.jpeg',
     hero: '2.1.jpeg',
     meta: [
@@ -227,7 +227,7 @@ export const projects = [
     title: '1964 Oldsmobile V8',
     kicker: 'Engine rebuild',
     summary:
-      'My late grandfather’s 1964 Oldsmobile, passed down two generations. Its knocking V8 was caught days from seizing and rebuilt top to bottom.',
+      'My late grandfather\'s 1964 Oldsmobile, passed down two generations. Its V8 engine was on the verge of catastrophic failure, so I gave it a much needed rebuild.',
     cover: '3.22.jpeg',
     hero: '3.1.jpeg',
     meta: [
@@ -306,7 +306,7 @@ export const projects = [
     title: 'Rocket Stove',
     kicker: 'Masonry heater',
     summary:
-      'A high-efficiency wood-burning heater built into the dome, routing its exhaust through a thermal-mass bench that stays warm long after the fire.',
+      'The dome I built needed a heating system in the winter so I studied rocket stoves and designed and constructed one that nicely follows the contour of the dome. Guests now get to experience a cozy dome and are warmed by the bench in which they sit on.',
     cover: '4.12.jpeg',
     coverPos: '15% 50%',
     hero: '4.12.jpeg',
@@ -382,7 +382,7 @@ export const projects = [
     title: '1960 Airstream Safari',
     kicker: 'Vintage trailer restoration',
     summary:
-      'A 1960 Airstream Safari, gutted down to its aluminum skins and being rebuilt from the floor up — under a timber pavilion I built to shelter it.',
+      'A 1960 Airstream Safari, gutted down to nothing now being rebuilt from the floor up.',
     cover: 'airstream-interior-white-oak-floor.jpeg',
     coverPos: '50% 55%',
     hero: 'airstream-as-found-exterior.jpeg',
@@ -473,7 +473,7 @@ export const projects = [
     title: 'Airstream Pavilion',
     kicker: 'Timber structure',
     summary:
-      'A 26-foot heavy-timber pavilion I designed in SolidWorks and built to shelter the Airstream.',
+      'A 26-foot heavy-timber pavilion I designed in SolidWorks and built to permanently shelter the Airstream. The two together will serve as a tiny house that will be able to withstand any weather.',
     cover: 'pavilion-angle.jpeg',
     coverPos: '50% 62%',
     hero: 'pavilion-front.jpeg',
