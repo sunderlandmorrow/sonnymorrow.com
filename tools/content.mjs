@@ -14,7 +14,7 @@ export const site = {
   useCustomDomain: true,
   tagline: 'Earth, brick & iron — built by hand.',
   intro:
-    'Hi, I’m Sonny Morrow, a mechanical engineer working in the medical device industry. I’ve always been drawn to the process of turning ideas into real things. Whether designing an adobe tea house, building a heavy-timber pavilion, or restoring a 1960 Airstream, I approach every project with the same mindset: understand how it works, design it thoughtfully, build it myself, and obsess over the details until it’s right.',
+    'Hi, I’m Sonny Morrow, a mechanical engineer working in the medical device industry. I’ve always been drawn to the process of turning ideas into real things. Whether designing an adobe tea house, building a heavy-timber pavilion, or restoring a 1960 Airstream, I approach every project with the same mindset: understand how it works, design it thoughtfully, build it, and obsess over the details until it’s right.',
   // Home-page collage: first photo is the tall arched one. Each tile links to its project.
   collage: [
     { image: 'pavilion-front.jpeg', project: 'airstream-pavilion', label: 'Timber pavilion', pos: '50% 60%' },
