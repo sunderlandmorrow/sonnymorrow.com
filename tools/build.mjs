@@ -182,8 +182,8 @@ ${header(prefix)}
 <main>
 <section class="hero">
   <div class="hero-text">
-    <p class="eyebrow">Mechanical engineer · Northern California</p>
-    <h1 class="sr-only">${esc(site.name)}</h1>
+    <p class="eyebrow">Portfolio · Northern California</p>
+    <h1>Mechanical engineer <em>&amp;</em> builder.</h1>
     <p class="lede">${esc(site.intro)}</p>
     <a class="btn" href="#work">See the work <span aria-hidden="true">↓</span></a>
   </div>
