@@ -73,7 +73,6 @@ function footer(prefix) {
   <div class="wrap">
     <div class="footer-row">
       <span>© ${year} ${esc(site.name)}</span>
-      <span><a href="${prefix}#work">All projects</a> · <a href="${esc(site.video)}" target="_blank" rel="noopener">Dome on YouTube ↗</a></span>
     </div>
   </div>
 </footer>
