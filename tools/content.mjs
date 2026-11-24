@@ -18,9 +18,9 @@ export const site = {
   // Home-page collage: first photo is the tall arched one. Each tile links to its project.
   collage: [
     { image: 'pavilion-front.jpeg', project: 'airstream-pavilion', label: 'Timber pavilion', pos: '50% 60%' },
-    { image: 'pic01.jpeg', project: 'earthbag-dome', label: 'Earthbag dome', pos: '25% 55%' },
+    { image: 'pic01.jpeg', project: 'earthbag-dome', label: 'Adobe Tea House in Grass Valley, CA', pos: '25% 55%' },
     { image: 'airstream-interior-white-oak-floor.jpeg', project: 'airstream-safari-1960', label: '1960 Airstream', pos: '50% 60%' },
-    { image: '3.22.jpeg', project: 'oldsmobile-1964', label: '1964 Olds V8', pos: '50% 45%' },
+    { image: '2.35.jpeg', project: 'mercedes-300d', label: '1984 Mercedes 300D', pos: '55% 60%' },
   ],
   heroImage: 'pic01.jpeg',
   video: 'https://www.youtube.com/watch?v=Dcu71gSOogg&t=421s',
