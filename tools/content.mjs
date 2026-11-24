@@ -43,8 +43,7 @@ export const projects = [
     kicker: 'Architecture',
     summary:
       'A 12-foot earthbag dome designed and built by hand after an apprenticeship at Cal-Earth Institute — now a tea house on Airbnb Experiences.',
-    cover: '2j.jpeg',
-    coverPos: '50% 55%',
+    cover: 'pic01.jpeg',
     hero: 'pic01.jpeg',
     meta: [
       ['Location', 'Grass Valley, CA'],
