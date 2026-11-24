@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { site, projects } from './content.mjs';
 import { dims } from './dims.mjs';
+import crypto from 'crypto';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -11,6 +12,9 @@ const pad = (n) => String(n).padStart(2, '0');
 const year = new Date().getFullYear();
 
 const missing = new Set();
+// Content hash added to CSS/JS links so browsers fetch the new file after every change.
+const ver = (f) => crypto.createHash('md5').update(fs.readFileSync(path.join(root, 'assets', f))).digest('hex').slice(0, 8);
+const V = { css: ver('style.css'), js: ver('site.js') };
 function img(file, prefix, { alt = '', cls = '', eager = false, sizes = '100vw', pos = '' } = {}) {
   const p = path.join(root, 'images', file);
   if (!fs.existsSync(p)) { missing.add(file); return ''; }
@@ -48,7 +52,7 @@ ${site.useCustomDomain ? `<meta property="og:image" content="https://${site.doma
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${prefix}assets/style.css">
+<link rel="stylesheet" href="${prefix}assets/style.css?v=${V.css}">
 <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>`;
 }
@@ -79,7 +83,7 @@ function footer(prefix) {
   <figure><img alt=""><figcaption></figcaption></figure>
   <button class="lb-next" aria-label="Next photo">›</button>
 </div>
-<script src="${prefix}assets/site.js" defer></script>
+<script src="${prefix}assets/site.js?v=${V.js}" defer></script>
 </body>
 </html>`;
 }
