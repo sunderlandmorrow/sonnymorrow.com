@@ -473,7 +473,7 @@ export const projects = [
     title: 'Airstream Pavilion',
     kicker: 'Timber structure',
     summary:
-      'A 26-foot heavy-timber pavilion I designed in SolidWorks and built to shelter the Airstream — six 8×8 posts, doubled 2×12 beams and fourteen 2×12 rafters.',
+      'A 26-foot heavy-timber pavilion I designed in SolidWorks and built to shelter the Airstream.',
     cover: 'pavilion-angle.jpeg',
     coverPos: '50% 62%',
     hero: 'pavilion-front.jpeg',
