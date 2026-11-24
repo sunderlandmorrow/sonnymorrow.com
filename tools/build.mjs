@@ -185,13 +185,14 @@ ${header(prefix)}
 <main>
 <section class="hero">
   <div class="hero-text">
-    <p class="eyebrow">Portfolio · Northern California</p>
-    <h1>Earth, brick <em>&amp;</em> iron —<br>built by hand.</h1>
+    <p class="eyebrow">Mechanical engineer · Northern California</p>
+    <h1>Engineer by trade. <em>Builder</em> at heart.</h1>
     <p class="lede">${esc(site.intro)}</p>
     <a class="btn" href="#work">See the work <span aria-hidden="true">↓</span></a>
   </div>
-  <div class="hero-img">${img(site.heroImage, prefix, { alt: 'The finished earthbag dome under a flowering tree', eager: true, sizes: '(min-width: 900px) 55vw, 100vw' })}
-    <span class="hero-tag">Earthbag dome, Grass Valley CA</span>
+  <div class="collage">${site.collage
+    .map((t, i) => `<a class="tile t${i + 1}" href="${prefix}projects/${t.project}/">${img(t.image, prefix, { alt: t.label, eager: true, pos: t.pos, sizes: i === 0 ? '(min-width: 900px) 25vw, 50vw' : '(min-width: 900px) 15vw, 33vw' })}<span class="hero-tag">${esc(t.label)}</span></a>`)
+    .join('\n    ')}
   </div>
 </section>
 

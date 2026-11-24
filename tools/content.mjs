@@ -14,7 +14,14 @@ export const site = {
   useCustomDomain: true,
   tagline: 'Earth, brick & iron — built by hand.',
   intro:
-    'I design and build things the slow way: an earthbag dome raised one tamped layer at a time, two classic engines torn down to the crank and brought back, and a wood-fired heater that warms the bench you sit on.',
+    'I’m a mechanical engineer working in medical technology. Outside of work I’m deeply passionate about alternative housing — I’ve built an earthbag dome and a heavy-timber pavilion, and I’m restoring a 1960 Airstream — with a few old engines along the way.',
+  // Home-page collage: first photo is the tall arched one. Each tile links to its project.
+  collage: [
+    { image: 'pavilion-front.jpeg', project: 'airstream-pavilion', label: 'Timber pavilion', pos: '50% 60%' },
+    { image: 'pic01.jpeg', project: 'earthbag-dome', label: 'Earthbag dome', pos: '25% 55%' },
+    { image: 'airstream-interior-white-oak-floor.jpeg', project: 'airstream-safari-1960', label: '1960 Airstream', pos: '50% 60%' },
+    { image: '3.22.jpeg', project: 'oldsmobile-1964', label: '1964 Olds V8', pos: '50% 45%' },
+  ],
   heroImage: 'pic01.jpeg',
   video: 'https://www.youtube.com/watch?v=Dcu71gSOogg&t=421s',
 };
