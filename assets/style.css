@@ -299,3 +299,10 @@ em { font-style: italic; color: var(--accent); }
   .wordmark { font-size: 19px; }
   .site-header nav { gap: 14px; font-size: 14px; }
 }
+
+/* Divider between the home intro and the project list */
+#work::before {
+  content: ''; display: block; max-width: calc(var(--max) - 2 * var(--gutter)); margin: 0 auto;
+  height: 1px; background: var(--line);
+}
+#work > .work:first-child { padding-top: clamp(48px, 7vw, 96px); }
