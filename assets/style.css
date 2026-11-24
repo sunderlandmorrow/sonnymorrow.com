@@ -320,3 +320,9 @@ em { font-style: italic; color: var(--accent); }
 /* Home cards show the whole cover photo in its own shape; tall photos are capped in height. */
 .card-img--whole { aspect-ratio: var(--r); width: min(100%, calc(560px * var(--r))); justify-self: center; }
 .card-link:hover .card-img--whole img { transform: scale(1.015); }
+
+/* Project pages: give the photos more room. The body runs wider than the rest
+   of the site and the text keeps its comfortable reading width. */
+.p-body.wrap { max-width: 1520px; }
+.chapters { max-width: 1180px; }
+.gallery.g1 .gi { width: min(100%, calc(88vh * var(--r))); }
