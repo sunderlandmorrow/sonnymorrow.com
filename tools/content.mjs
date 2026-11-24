@@ -310,7 +310,7 @@ export const projects = [
     cover: '4.12.jpeg',
     coverPos: '15% 50%',
     hero: '4.12.jpeg',
-    heroPos: '12% 68%',
+    heroFit: 'whole', // show the whole stove in the banner
     meta: [
       ['Built for', 'The earthbag dome'],
       ['Type', 'Rocket mass heater'],
