@@ -27,7 +27,7 @@ export const site = {
     },
     { image: 'pic01.jpeg', project: 'earthbag-dome', label: 'Adobe Tea House in Grass Valley, CA', pos: '6% 60%' },
     { image: 'airstream-interior-white-oak-floor.jpeg', project: 'airstream-safari-1960', label: '1960 Airstream', pos: '50% 60%' },
-    { image: '2.35.jpeg', project: 'mercedes-300d', label: '1984 Mercedes 300D', pos: '55% 60%' },
+    { image: '2.35.jpeg', project: 'mercedes-300d', label: '1984 Mercedes 300D', pos: '50% 55%' },
   ],
   heroImage: 'pic01.jpeg',
   video: 'https://www.youtube.com/watch?v=Dcu71gSOogg&t=421s',
@@ -307,7 +307,9 @@ export const projects = [
     summary:
       'A high-efficiency wood-burning heater built into the dome, routing its exhaust through a thermal-mass bench that stays warm long after the fire.',
     cover: '4.12.jpeg',
+    coverPos: '15% 50%',
     hero: '4.12.jpeg',
+    heroPos: '12% 68%',
     meta: [
       ['Built for', 'The earthbag dome'],
       ['Type', 'Rocket mass heater'],
