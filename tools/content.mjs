@@ -14,7 +14,7 @@ export const site = {
   useCustomDomain: true,
   tagline: 'Earth, brick & iron — built by hand.',
   intro:
-    'I’m a mechanical engineer working in medical technology. Outside of work I’m deeply passionate about alternative housing — I’ve built an earthbag dome and a heavy-timber pavilion, and I’m restoring a 1960 Airstream — with a few old engines along the way.',
+    'I’m a mechanical engineer working in medical technology, with a degree in Mechanical Engineering from UC Davis. Outside of work I’m always in the middle of a project — usually several at once. I take builds from design all the way to completion, and I’m at home in the finest details. My favorite projects are alternative houses: an earthbag dome, a heavy-timber pavilion, and a 1960 Airstream restoration.',
   // Home-page collage: first photo is the tall arched one. Each tile links to its project.
   collage: [
     { image: 'pavilion-front.jpeg', project: 'airstream-pavilion', label: 'Timber pavilion', pos: '50% 60%' },
