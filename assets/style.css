@@ -306,3 +306,8 @@ em { font-style: italic; color: var(--accent); }
   height: 1px; background: var(--line);
 }
 #work > .work:first-child { padding-top: clamp(48px, 7vw, 96px); }
+
+/* Hidden from view, still read by search engines and screen readers */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.hero .eyebrow + .sr-only + .lede { margin-top: 18px; }
+.hero .lede { font-size: clamp(19px, 1.7vw, 23px); line-height: 1.6; }

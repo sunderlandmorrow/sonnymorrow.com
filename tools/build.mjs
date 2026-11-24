@@ -183,7 +183,7 @@ ${header(prefix)}
 <section class="hero">
   <div class="hero-text">
     <p class="eyebrow">Mechanical engineer · Northern California</p>
-    <h1>Engineer by trade. <em>Builder</em> at heart.</h1>
+    <h1 class="sr-only">${esc(site.name)}</h1>
     <p class="lede">${esc(site.intro)}</p>
     <a class="btn" href="#work">See the work <span aria-hidden="true">↓</span></a>
   </div>
