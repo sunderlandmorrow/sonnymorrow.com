@@ -34,6 +34,8 @@ export const site = {
 };
 
 // Each project can set  section: 'professional'  — anything else shows under Personal projects.
+// Banners and home-page cards show the whole photo. Set  heroFit: 'crop'  or  coverFit: 'crop'
+// (with heroPos / coverPos to aim it) to fill the space by cropping instead.
 export const projects = [
   {
     slug: 'earthbag-dome',
@@ -139,9 +141,7 @@ export const projects = [
     summary:
       'A 1984 Mercedes 300D with 230k miles, pulled engine-out, resealed, rebearinged and put back together leak-free.',
     cover: '2.1.jpeg',
-    coverFit: 'whole', // don't trim the car on the home page card
     hero: '2.1.jpeg',
-    heroFit: 'whole', // show the whole car in the banner
     meta: [
       ['Vehicle', '1984 Mercedes-Benz 300D'],
       ['Mileage', '230,000'],
@@ -311,7 +311,6 @@ export const projects = [
     cover: '4.12.jpeg',
     coverPos: '15% 50%',
     hero: '4.12.jpeg',
-    heroFit: 'whole', // show the whole stove in the banner
     meta: [
       ['Built for', 'The earthbag dome'],
       ['Type', 'Rocket mass heater'],

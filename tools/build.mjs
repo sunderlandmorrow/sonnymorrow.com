@@ -151,7 +151,7 @@ function home() {
   const prefix = '';
   const card = (p, i) => `<article class="card reveal">
     <a href="projects/${p.slug}/" class="card-link">
-      <div class="card-img${p.coverFit === 'whole' ? ' card-img--whole' : ''}"${p.coverFit === 'whole' && p.cover ? ` style="aspect-ratio:${ratio(p.cover).toFixed(4)}"` : ''}>${badge(p)}${cover(p.cover, prefix, { alt: p.title, sizes: '(min-width: 900px) 60vw, 100vw', pos: p.coverPos })}</div>
+      <div class="card-img${p.cover && p.coverFit !== 'crop' ? ' card-img--whole' : ''}"${p.cover && p.coverFit !== 'crop' ? ` style="--r:${ratio(p.cover).toFixed(4)}"` : ''}>${badge(p)}${cover(p.cover, prefix, { alt: p.title, sizes: '(min-width: 900px) 60vw, 100vw', pos: p.coverPos })}</div>
       <div class="card-body">
         <span class="num">${pad(i + 1)}</span>
         <span class="kicker">${esc(p.kicker)}</span>
@@ -258,8 +258,8 @@ function projectPage(p, i) {
 ${header(prefix)}
 <main>
 <section class="p-hero${p.hero ? '' : ' p-hero--empty'}">
-  ${p.hero && p.heroFit === 'whole' ? img(p.hero, prefix, { alt: '', cls: 'p-hero-fill' }) : ''}
-  ${p.hero ? img(p.hero, prefix, { alt: p.title, eager: true, pos: p.heroPos, cls: p.heroFit === 'whole' ? 'p-hero-whole' : '' }) : ''}
+  ${p.hero && p.heroFit !== 'crop' ? img(p.hero, prefix, { alt: '', cls: 'p-hero-fill' }) : ''}
+  ${p.hero ? img(p.hero, prefix, { alt: p.title, eager: true, pos: p.heroPos, cls: p.heroFit !== 'crop' ? 'p-hero-whole' : '' }) : ''}
   <div class="p-hero-text wrap">
     <span class="kicker">${SECTIONS[sectionOf(p)].label} · ${esc(p.kicker)}</span>${badge(p)}
     <h1>${esc(p.title)}</h1>

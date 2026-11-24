@@ -316,4 +316,7 @@ em { font-style: italic; color: var(--accent); }
 /* Banner that shows the whole photo (heroFit: 'whole'): blurred copy fills the sides */
 .p-hero img.p-hero-fill { position: absolute; inset: 0; filter: blur(28px) brightness(.55); transform: scale(1.15); animation: none; }
 .p-hero img.p-hero-whole { position: relative; object-fit: contain; }
+
+/* Home cards show the whole cover photo in its own shape; tall photos are capped in height. */
+.card-img--whole { aspect-ratio: var(--r); width: min(100%, calc(560px * var(--r))); justify-self: center; }
 .card-link:hover .card-img--whole img { transform: scale(1.015); }
