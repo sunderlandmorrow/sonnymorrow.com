@@ -312,3 +312,7 @@ em { font-style: italic; color: var(--accent); }
 /* Hidden from view, still read by search engines and screen readers */
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .hero .lede { font-size: clamp(17px, 1.5vw, 20px); line-height: 1.65; }
+
+/* Banner that shows the whole photo (heroFit: 'whole'): blurred copy fills the sides */
+.p-hero img.p-hero-fill { position: absolute; inset: 0; filter: blur(28px) brightness(.55); transform: scale(1.15); animation: none; }
+.p-hero img.p-hero-whole { position: relative; object-fit: contain; }

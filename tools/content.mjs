@@ -140,6 +140,7 @@ export const projects = [
       'A 1984 Mercedes 300D with 230k miles, pulled engine-out, resealed, rebearinged and put back together leak-free.',
     cover: '2.1.jpeg',
     hero: '2.1.jpeg',
+    heroFit: 'whole', // show the whole car in the banner
     meta: [
       ['Vehicle', '1984 Mercedes-Benz 300D'],
       ['Mileage', '230,000'],

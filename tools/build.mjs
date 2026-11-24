@@ -258,7 +258,8 @@ function projectPage(p, i) {
 ${header(prefix)}
 <main>
 <section class="p-hero${p.hero ? '' : ' p-hero--empty'}">
-  ${p.hero ? img(p.hero, prefix, { alt: p.title, eager: true, pos: p.heroPos }) : ''}
+  ${p.hero && p.heroFit === 'whole' ? img(p.hero, prefix, { alt: '', cls: 'p-hero-fill' }) : ''}
+  ${p.hero ? img(p.hero, prefix, { alt: p.title, eager: true, pos: p.heroPos, cls: p.heroFit === 'whole' ? 'p-hero-whole' : '' }) : ''}
   <div class="p-hero-text wrap">
     <span class="kicker">${SECTIONS[sectionOf(p)].label} · ${esc(p.kicker)}</span>${badge(p)}
     <h1>${esc(p.title)}</h1>
