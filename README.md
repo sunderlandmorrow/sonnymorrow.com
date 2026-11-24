@@ -18,6 +18,18 @@ node tools/serve.mjs
 ```
 Open the address it prints (normally http://127.0.0.1:4321). If that port is busy it picks the next free one.
 
+## Edit text right on the page
+With the preview running, every page has two buttons in the bottom-right corner:
+
+- **Edit text** — turn it on, then double-click any text, type, and press **Enter** (or click away) to save.
+  **Esc** cancels. While it's on, links don't navigate, so you can edit text inside project cards.
+  Saving rewrites that text in `tools/content.mjs` and rebuilds the site.
+  If the same text appears in several places (like a project title), it asks before changing all of them.
+  A few pieces (the big homepage headline, menu links, button labels) are part of the layout and can't be edited this way.
+- **Publish** — commits your changes and pushes them to GitHub; sonnymorrow.com updates about a minute later.
+
+This only exists in the local preview. The live site never includes the editor.
+
 ## Add a project
 1. Drop photos into `images/`.
 2. Copy an existing entry in `tools/content.mjs`, give it a new `slug`, and fill it in.
