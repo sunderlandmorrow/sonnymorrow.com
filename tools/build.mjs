@@ -187,7 +187,11 @@ ${header(prefix)}
     <a class="btn" href="#work">See the work <span aria-hidden="true">↓</span></a>
   </div>
   <div class="collage">${site.collage
-    .map((t, i) => `<a class="tile t${i + 1}" href="${prefix}projects/${t.project}/">${img(t.image, prefix, { alt: t.label, eager: true, pos: t.pos, sizes: i === 0 ? '(min-width: 900px) 25vw, 50vw' : '(min-width: 900px) 15vw, 33vw' })}<span class="hero-tag">${esc(t.label)}</span></a>`)
+    .map((t, i) => t.pair
+      ? `<a class="tile t${i + 1} pair" href="${prefix}projects/${t.project}/">${t.pair
+          .map((h) => `<span class="half${h.image.endsWith('.png') ? ' dwg' : ''}">${img(h.image, prefix, { alt: h.label, eager: true, pos: h.pos, sizes: '(min-width: 900px) 25vw, 50vw' })}<span class="hero-tag">${esc(h.label)}</span></span>`)
+          .join('')}</a>`
+      : `<a class="tile t${i + 1}" href="${prefix}projects/${t.project}/">${img(t.image, prefix, { alt: t.label, eager: true, pos: t.pos, sizes: '(min-width: 900px) 15vw, 33vw' })}<span class="hero-tag">${esc(t.label)}</span></a>`)
     .join('\n    ')}
   </div>
 </section>

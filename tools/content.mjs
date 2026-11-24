@@ -15,10 +15,17 @@ export const site = {
   tagline: 'Earth, brick & iron — built by hand.',
   intro:
     'Hi, I’m Sonny Morrow, a mechanical engineer working in the medical device industry. I’ve always been drawn to the process of turning ideas into real things. Whether designing an adobe tea house, building a heavy-timber pavilion, or restoring a 1960 Airstream, I approach every project with the same mindset: understand how it works, design it thoughtfully, build it, and obsess over the details until it’s right.',
-  // Home-page collage: first photo is the tall arched one. Each tile links to its project.
+  // Home-page collage. Each tile links to its project.
+  // The first tile is a wide "design vs. built" pair across the top row.
   collage: [
-    { image: 'pavilion-front.jpeg', project: 'airstream-pavilion', label: 'Timber pavilion', pos: '50% 60%' },
-    { image: 'pic01.jpeg', project: 'earthbag-dome', label: 'Adobe Tea House in Grass Valley, CA', pos: '25% 55%' },
+    {
+      project: 'airstream-pavilion',
+      pair: [
+        { image: 'pavilion-dwg-overview.png', label: 'SolidWorks drawing' },
+        { image: 'pavilion-angle.jpeg', label: 'Built — timber pavilion', pos: '50% 62%' },
+      ],
+    },
+    { image: 'pic01.jpeg', project: 'earthbag-dome', label: 'Adobe Tea House in Grass Valley, CA', pos: '6% 60%' },
     { image: 'airstream-interior-white-oak-floor.jpeg', project: 'airstream-safari-1960', label: '1960 Airstream', pos: '50% 60%' },
     { image: '2.35.jpeg', project: 'mercedes-300d', label: '1984 Mercedes 300D', pos: '55% 60%' },
   ],
