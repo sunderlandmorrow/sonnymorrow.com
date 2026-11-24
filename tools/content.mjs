@@ -548,4 +548,80 @@ export const projects = [
     ],
     outcome: '',
   },
+
+  // ---------------------------------------------------------------------------
+  // SKELETON PAGES — text and photos still to come.
+  // ---------------------------------------------------------------------------
+  {
+    slug: 'cottage-restoration',
+    title: 'Cottage Restoration',
+    kicker: 'Rental property restoration',
+    summary:
+      'A cottage I restored as a rental property, planned and modeled in SolidWorks.',
+    meta: [
+      ['Type', 'Rental property'],
+      ['Design', 'SolidWorks'],
+    ],
+    intro: [
+      'A cottage restoration for a rental property. I modeled the work in SolidWorks before starting.',
+      { todo: 'Where the cottage is, what shape it was in, and what the restoration covered.' },
+    ],
+    chapters: [
+      { title: 'In CAD', blocks: [{ todo: 'SolidWorks screenshots or drawings of the cottage.' }] },
+      { title: 'As found', blocks: [{ todo: 'Before photos and what needed fixing.' }] },
+      { title: 'The work', blocks: [{ todo: 'The main stages of the restoration, with photos.' }] },
+      { title: 'Finished', blocks: [{ todo: 'After photos of the finished cottage.' }] },
+    ],
+    outcome: '',
+  },
+
+  {
+    slug: 'gridfinity-tool-drawer',
+    title: 'Gridfinity Tool Drawer',
+    kicker: 'Shop organization',
+    summary:
+      'A Gridfinity drawer system I modeled in SolidWorks that holds every one of my tools.',
+    meta: [
+      ['System', 'Gridfinity'],
+      ['Design', 'SolidWorks'],
+    ],
+    intro: [
+      'A Gridfinity drawer system that holds all of my tools, with every bin modeled in SolidWorks.',
+      { todo: 'Why you built it, and how many drawers and bins it has.' },
+    ],
+    chapters: [
+      { title: 'In CAD', blocks: [{ todo: 'SolidWorks screenshots of the bins and the drawer layout.' }] },
+      { title: 'Printing & fitting', blocks: [{ todo: 'How the bins were made (printer, material) and fitted to each tool.' }] },
+      { title: 'Finished', blocks: [{ todo: 'Photos of the filled drawers.' }] },
+    ],
+    outcome: '',
+  },
+
+  {
+    slug: 'toyota-pickup-camper-1988',
+    title: '1988 Toyota Pickup Camper',
+    kicker: 'Truck camper build',
+    summary:
+      'A 1988 Toyota pickup with a custom-fit camper shell, lined in cedar, with a diesel heater and a solar system I designed to run a refrigerator.',
+    meta: [
+      ['Truck', '1988 Toyota pickup'],
+      ['Shell', 'Custom fit'],
+      ['Interior', 'Cedar lined'],
+      ['Heat', 'Diesel heater'],
+      ['Power', 'Solar, my own design'],
+      ['Fridge', 'Runs on solar'],
+    ],
+    intro: [
+      'I custom fit a camper shell to a 1988 Toyota pickup and made the inside livable: cedar lining, a diesel heater, and a solar system I designed to run a refrigerator.',
+      { todo: 'Where the truck came from and how you use it.' },
+    ],
+    chapters: [
+      { title: 'Fitting the shell', blocks: [{ todo: 'How the camper shell was custom fit to the truck, with photos.' }] },
+      { title: 'Cedar interior', blocks: [{ todo: 'Lining the inside with cedar, plus the bed and storage layout.' }] },
+      { title: 'Diesel heater', blocks: [{ todo: 'The heater, where it is mounted, fuel and exhaust routing.' }] },
+      { title: 'Solar & refrigerator', blocks: [{ todo: 'The solar design: panel, battery, controller, wiring, and the refrigerator it runs.' }] },
+      { title: 'Finished', blocks: [{ todo: 'Photos of the finished camper, inside and out.' }] },
+    ],
+    outcome: '',
+  },
 ];
