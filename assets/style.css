@@ -148,15 +148,14 @@ em { font-style: italic; color: var(--accent); }
 .hint { font-size: 14px; color: var(--muted) !important; }
 .inline-link { color: var(--accent); font-weight: 500; text-decoration: none; border-bottom: 1px solid currentColor; }
 
-.gallery { display: grid; gap: 10px; margin: 6px 0 26px; }
-.gallery.g2 { grid-template-columns: 1fr 1fr; }
-.gallery.g3 { grid-template-columns: 1fr 1fr 1fr; }
-.gallery.gN { grid-template-columns: repeat(3, 1fr); }
-.gallery:not(.g1) .ph { aspect-ratio: 4/3.4; }
-.gallery.gN .ph:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
-.ph { display: block; overflow: hidden; border-radius: 10px; background: var(--bg-2); cursor: zoom-in; }
-.ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .4s; }
-.gallery.g1 .ph img { max-height: 80vh; object-fit: cover; }
+/* Justified rows: each photo keeps its own shape (--r = width/height),
+   widths are shared in proportion so every photo in a row is the same height. */
+.gallery { display: flex; flex-direction: column; gap: 10px; margin: 6px 0 26px; }
+.grow { display: flex; gap: 10px; }
+.gi { flex: var(--r) 1 0; min-width: 0; aspect-ratio: var(--r); }
+.gallery.g1 .gi { flex: none; width: min(100%, calc(78vh * var(--r))); margin: 0 auto; }
+.ph { display: block; width: 100%; height: 100%; overflow: hidden; border-radius: 10px; background: var(--bg-2); cursor: zoom-in; }
+.ph img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .4s; }
 .ph:hover img { transform: scale(1.03); }
 
 /* Before / after */
@@ -228,9 +227,7 @@ em { font-style: italic; color: var(--accent); }
 }
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  .gallery.g3, .gallery.gN { grid-template-columns: 1fr 1fr; }
-  .gallery.g3 .ph:first-child { grid-column: span 2; aspect-ratio: 3/2; }
-  .gallery { gap: 6px; }
+  .gallery, .grow { gap: 6px; }
   .lightbox { padding: 56px 8px; }
   .lb-prev, .lb-next { top: auto; bottom: 10px; transform: none; }
   .pager { grid-template-columns: 1fr; }
@@ -262,14 +259,12 @@ em { font-style: italic; color: var(--accent); }
 .outcome .todo { margin: 0; }
 
 /* Technical drawings: never crop, show the whole sheet on white */
-.ph:has(img[src$=".png"]) { background: #fff; aspect-ratio: auto !important; }
-.ph img[src$=".png"] { object-fit: contain; height: auto; }
-.gallery:has(img[src$=".png"]) { align-items: start; }
+.ph:has(img[src$=".png"]) { background: #fff; }
+.ph img[src$=".png"] { object-fit: contain; }
 
 /* Looping video clips (GIF-style) */
 .ph-video { cursor: default; }
 .ph-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
-.gallery.g1 .ph-video video { height: auto; max-height: 80vh; }
 
 /* ---------- Professional / Personal sections ---------- */
 .work + .work { padding-top: 0; }

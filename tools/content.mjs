@@ -28,6 +28,7 @@ export const projects = [
     summary:
       'A 12-foot earthbag dome designed and built by hand after an apprenticeship at Cal-Earth Institute — now a tea house on Airbnb Experiences.',
     cover: '2j.jpeg',
+    coverPos: '50% 55%',
     hero: 'pic01.jpeg',
     meta: [
       ['Location', 'Grass Valley, CA'],
@@ -367,7 +368,9 @@ export const projects = [
     summary:
       'A 1960 Airstream Safari, gutted down to its aluminum skins and being rebuilt from the floor up — under a timber pavilion I built to shelter it.',
     cover: 'airstream-interior-white-oak-floor.jpeg',
+    coverPos: '50% 55%',
     hero: 'airstream-as-found-exterior.jpeg',
+    heroPos: '50% 58%',
     meta: [
       ['Trailer', '1960 Airstream Safari'],
       ['Scope', 'Full interior restoration'],
@@ -456,7 +459,9 @@ export const projects = [
     summary:
       'A 26-foot heavy-timber pavilion I designed in SolidWorks and built to shelter the Airstream — six 8×8 posts, doubled 2×12 beams and fourteen 2×12 rafters.',
     cover: 'pavilion-angle.jpeg',
+    coverPos: '50% 62%',
     hero: 'pavilion-front.jpeg',
+    heroPos: '50% 60%',
     meta: [
       ['Built for', '1960 Airstream Safari'],
       ['Slab', '26 × 20 ft concrete'],

@@ -11,11 +11,19 @@ const pad = (n) => String(n).padStart(2, '0');
 const year = new Date().getFullYear();
 
 const missing = new Set();
-function img(file, prefix, { alt = '', cls = '', eager = false, sizes = '100vw' } = {}) {
+function img(file, prefix, { alt = '', cls = '', eager = false, sizes = '100vw', pos = '' } = {}) {
   const p = path.join(root, 'images', file);
   if (!fs.existsSync(p)) { missing.add(file); return ''; }
   const [w, h] = dims(p) || [1200, 800];
-  return `<img src="${prefix}images/${esc(file)}" width="${w}" height="${h}" alt="${esc(alt)}"${cls ? ` class="${cls}"` : ''} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" sizes="${sizes}">`;
+  return `<img src="${prefix}images/${esc(file)}" width="${w}" height="${h}" alt="${esc(alt)}"${cls ? ` class="${cls}"` : ''}${pos ? ` style="object-position:${esc(pos)}"` : ''} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" sizes="${sizes}">`;
+}
+
+// Width/height ratio of a gallery item (videos use their poster frame).
+function ratio(file) {
+  const f = file.endsWith('.mp4') ? file.replace(/\.mp4$/, '-poster.jpeg') : file;
+  const p = path.join(root, 'images', f);
+  const d = fs.existsSync(p) && dims(p);
+  return d ? d[0] / d[1] : 16 / 9;
 }
 
 function placeholder(label, prefix) {
@@ -87,12 +95,26 @@ function loopVideo(file, prefix) {
   return `<div class="ph ph-video"><video src="${prefix}images/${esc(file)}"${hasPoster ? ` poster="${prefix}images/${esc(posterFile)}"` : ''} width="${w}" height="${h}" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>`;
 }
 
+// Photos are never cropped: each row is "justified" — every photo keeps its own
+// shape and the row's widths are shared so all photos in a row are the same height.
 function gallery(files, prefix) {
   const n = files.length;
-  const cls = n === 1 ? 'g1' : n === 2 ? 'g2' : n === 3 ? 'g3' : 'gN';
-  const sizes = n === 1 ? '(min-width: 900px) 860px, 100vw' : '(min-width: 900px) 430px, 50vw';
-  return `<div class="gallery ${cls}">${files
-    .map((f) => (f.endsWith('.mp4') ? loopVideo(f, prefix) : `<a class="ph" href="${prefix}images/${esc(f)}" data-lb>${img(f, prefix, { sizes })}</a>`))
+  // Split into rows of at most 3 (4 → 2+2, 7 → 3+2+2 …).
+  const rows = [];
+  let rest = [...files];
+  while (rest.length) {
+    const take = rest.length === 4 ? 2 : Math.min(3, rest.length);
+    rows.push(rest.slice(0, take));
+    rest = rest.slice(take);
+  }
+  const item = (f, perRow) => {
+    const r = ratio(f).toFixed(4);
+    const sizes = perRow === 1 ? '(min-width: 900px) 860px, 100vw' : '(min-width: 900px) 430px, 50vw';
+    const inner = f.endsWith('.mp4') ? loopVideo(f, prefix) : `<a class="ph" href="${prefix}images/${esc(f)}" data-lb>${img(f, prefix, { sizes })}</a>`;
+    return `<div class="gi" style="--r:${r}">${inner}</div>`;
+  };
+  return `<div class="gallery${n === 1 ? ' g1' : ''}">${rows
+    .map((row) => `<div class="grow">${row.map((f) => item(f, row.length)).join('')}</div>`)
     .join('')}</div>`;
 }
 
@@ -133,7 +155,7 @@ function home() {
   // Hides empty stats, and hides "personal" while it would just repeat the total.
   const card = (p, i) => `<article class="card reveal">
     <a href="projects/${p.slug}/" class="card-link">
-      <div class="card-img">${badge(p)}${cover(p.cover, prefix, { alt: p.title, sizes: '(min-width: 900px) 60vw, 100vw' })}</div>
+      <div class="card-img">${badge(p)}${cover(p.cover, prefix, { alt: p.title, sizes: '(min-width: 900px) 60vw, 100vw', pos: p.coverPos })}</div>
       <div class="card-body">
         <span class="num">${pad(i + 1)}</span>
         <span class="kicker">${esc(p.kicker)}</span>
@@ -239,7 +261,7 @@ function projectPage(p, i) {
 ${header(prefix)}
 <main>
 <section class="p-hero${p.hero ? '' : ' p-hero--empty'}">
-  ${p.hero ? img(p.hero, prefix, { alt: p.title, eager: true }) : ''}
+  ${p.hero ? img(p.hero, prefix, { alt: p.title, eager: true, pos: p.heroPos }) : ''}
   <div class="p-hero-text wrap">
     <span class="kicker">${SECTIONS[sectionOf(p)].label} · ${esc(p.kicker)}</span>${badge(p)}
     <h1>${esc(p.title)}</h1>
