@@ -21,7 +21,7 @@ export const site = {
     {
       project: 'airstream-pavilion',
       pair: [
-        { image: 'pavilion-dwg-overview.png', label: 'SolidWorks drawing' },
+        { image: 'pavilion-dwg-overview-crop.png', label: 'SolidWorks drawing' },
         { image: 'pavilion-angle.jpeg', label: 'Built — timber pavilion', pos: '50% 62%' },
       ],
     },

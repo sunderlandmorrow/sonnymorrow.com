@@ -315,7 +315,7 @@ else if (fs.existsSync(cname)) fs.unlinkSync(cname);
 write('.nojekyll', '');
 
 // Report unused images (handy for cleanup)
-const used = new Set([site.heroImage, ...projects.flatMap((p) => [p.cover, p.hero, ...p.chapters.flatMap((c) => c.blocks.filter(Array.isArray).flat()), p.beforeAfter?.before, p.beforeAfter?.after].filter(Boolean))]);
+const used = new Set([site.heroImage, ...site.collage.flatMap((t) => (t.pair ? t.pair.map((h) => h.image) : [t.image])), ...projects.flatMap((p) => [p.cover, p.hero, ...p.chapters.flatMap((c) => c.blocks.filter(Array.isArray).flat()), p.beforeAfter?.before, p.beforeAfter?.after].filter(Boolean))]);
 const unused = fs.readdirSync(path.join(root, 'images')).filter((f) => !used.has(f) && !f.endsWith('-poster.jpeg'));
 if (missing.size) console.warn('MISSING images:', [...missing].join(', '));
 console.log(`Built ${projects.length + 2} pages. Unused images: ${unused.length ? unused.join(', ') : 'none'}`);
