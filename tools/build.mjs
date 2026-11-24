@@ -151,7 +151,7 @@ function home() {
   const prefix = '';
   const card = (p, i) => `<article class="card reveal">
     <a href="projects/${p.slug}/" class="card-link">
-      <div class="card-img">${badge(p)}${cover(p.cover, prefix, { alt: p.title, sizes: '(min-width: 900px) 60vw, 100vw', pos: p.coverPos })}</div>
+      <div class="card-img${p.coverFit === 'whole' ? ' card-img--whole' : ''}"${p.coverFit === 'whole' && p.cover ? ` style="aspect-ratio:${ratio(p.cover).toFixed(4)}"` : ''}>${badge(p)}${cover(p.cover, prefix, { alt: p.title, sizes: '(min-width: 900px) 60vw, 100vw', pos: p.coverPos })}</div>
       <div class="card-body">
         <span class="num">${pad(i + 1)}</span>
         <span class="kicker">${esc(p.kicker)}</span>
