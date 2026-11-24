@@ -40,7 +40,7 @@ export const projects = [
   {
     slug: 'earthbag-dome',
     title: 'Adobe Tea House',
-    kicker: 'Architecture',
+    kicker: 'Earth architecture',
     summary:
       'A 12-foot earthbag dome designed and built by hand after an apprenticeship at Cal-Earth Institute — now a tea house on Airbnb Experiences.',
     cover: 'pic01.jpeg',
