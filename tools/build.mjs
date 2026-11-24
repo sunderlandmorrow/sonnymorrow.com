@@ -141,7 +141,7 @@ const SECTIONS = {
     empty: 'Case studies from my professional work are on the way.',
   },
   personal: {
-    id: 'personal', title: 'Personal projects', label: 'Personal project',
+    id: 'personal', title: 'Personal projects', label: 'Personal project', hideHead: true,
     blurb: 'Things I’ve designed and built on my own time — by hand, start to finish.',
   },
 };
@@ -169,7 +169,7 @@ function home() {
       ? list.map(card).join('\n  ')
       : `<div class="section-empty reveal"><span class="badge">Coming soon</span><p>${esc(sec.empty)}</p></div>`;
     return `<section id="${sec.id}" class="work wrap">
-  <header class="section-head"><h2 class="section-title">${sec.title}</h2><p>${esc(sec.blurb)}</p></header>
+  ${sec.hideHead ? '' : `<header class="section-head"><h2 class="section-title">${sec.title}</h2><p>${esc(sec.blurb)}</p></header>`}
   ${body}
 </section>`;
   };
