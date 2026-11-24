@@ -326,3 +326,8 @@ em { font-style: italic; color: var(--accent); }
 .p-body.wrap { max-width: 1520px; }
 .chapters { max-width: 1180px; }
 .gallery.g1 .gi { width: min(100%, calc(88vh * var(--r))); }
+
+/* Home page: scale everything up 20% on big screens (matches browser zoom 120%) */
+@media (min-width: 1500px) {
+  body.home { zoom: 1.2; }
+}
