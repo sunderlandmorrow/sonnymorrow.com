@@ -150,13 +150,6 @@ const inSection = (key) => projects.filter((p) => sectionOf(p) === key);
 // ---------- Home ----------
 function home() {
   const prefix = '';
-  const stats = [
-    [projects.length, 'projects total'],
-    [inSection('personal').length, 'personal'],
-    [inSection('professional').length, 'professional'],
-    [projects.filter((p) => p.status === 'in-progress').length, 'in progress'],
-  ].filter(([n, label]) => n > 0 && !(label === 'personal' && n === projects.length));
-  // Hides empty stats, and hides "personal" while it would just repeat the total.
   const card = (p, i) => `<article class="card reveal">
     <a href="projects/${p.slug}/" class="card-link">
       <div class="card-img">${badge(p)}${cover(p.cover, prefix, { alt: p.title, sizes: '(min-width: 900px) 60vw, 100vw', pos: p.coverPos })}</div>
@@ -198,10 +191,6 @@ ${header(prefix)}
     .map((t, i) => `<a class="tile t${i + 1}" href="${prefix}projects/${t.project}/">${img(t.image, prefix, { alt: t.label, eager: true, pos: t.pos, sizes: i === 0 ? '(min-width: 900px) 25vw, 50vw' : '(min-width: 900px) 15vw, 33vw' })}<span class="hero-tag">${esc(t.label)}</span></a>`)
     .join('\n    ')}
   </div>
-</section>
-
-<section class="stats wrap">
-  ${stats.map(([n, l]) => `<div><strong data-count="${n}">${n}</strong><span>${l}</span></div>`).join('\n  ')}
 </section>
 
 <div id="work">

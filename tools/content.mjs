@@ -14,7 +14,7 @@ export const site = {
   useCustomDomain: true,
   tagline: 'Earth, brick & iron — built by hand.',
   intro:
-    'I’m a mechanical engineer working in medical technology, with a degree in Mechanical Engineering from UC Davis. Outside of work I’m always in the middle of a project — usually several at once. I take builds from design all the way to completion, and I’m at home in the finest details. My favorite projects are alternative houses: an earthbag dome, a heavy-timber pavilion, and a 1960 Airstream restoration.',
+    'Hi, I’m Sonny Morrow — a mechanical engineer in the medical device industry. Outside of work I’m still an engineer: I design and build my own projects, from an adobe tea house and a heavy-timber pavilion to a 1960 Airstream restoration, and I see each one through from first sketch to the finest detail.',
   // Home-page collage: first photo is the tall arched one. Each tile links to its project.
   collage: [
     { image: 'pavilion-front.jpeg', project: 'airstream-pavilion', label: 'Timber pavilion', pos: '50% 60%' },
