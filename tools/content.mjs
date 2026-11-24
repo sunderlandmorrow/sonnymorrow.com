@@ -208,6 +208,14 @@ export const projects = [
           'With the engine back in the car, I reconnected every electrical and mechanical connection, then fired it up to dial in the timing. After some adjusting, the engine ran beautifully.',
         ],
       },
+      {
+        title: 'Wedding car',
+        blocks: [
+          'A few years later, the 300D had a bigger job: it was our wedding car.',
+          ['mercedes-wedding-couple.jpeg'],
+          ['mercedes-wedding-getaway.jpeg', 'mercedes-wedding-just-married.jpeg', 'mercedes-wedding-arch.jpeg'],
+        ],
+      },
     ],
     beforeAfter: { before: '2.36.jpeg', after: '2.35.jpeg' },
     parts: [
