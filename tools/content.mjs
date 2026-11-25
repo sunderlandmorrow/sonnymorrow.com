@@ -481,7 +481,7 @@ export const projects = [
     title: 'Airstream Pavilion',
     kicker: 'Timber structure',
     summary:
-      'A 26 foot heavy timber pavilion I designed in SolidWorks and built to permanently shelter the Airstream. The two together will serve as a tiny house that will be able to withstand any weather.',
+      'A heavy timber pavilion I designed in SolidWorks and built to permanently shelter the Airstream.',
     cover: 'pavilion-angle.jpeg',
     coverPos: '50% 62%',
     hero: 'pavilion-front.jpeg',
@@ -565,7 +565,7 @@ export const projects = [
     title: 'Cottage Restoration',
     kicker: 'Rental property restoration',
     summary:
-      'A cottage I restored as a rental property, planned and modeled in SolidWorks.',
+      'A uniquely shaped 1940s cottage that my business partner and I restored on our rental property. We completely remodeled the interior and exterior, bringing the structure back to life while upgrading all of its mechanical systems. It is now fully restored and serving as a rental home in Grass Valley, CA.',
     meta: [
       ['Type', 'Rental property'],
       ['Design', 'SolidWorks'],
@@ -588,7 +588,7 @@ export const projects = [
     title: 'Gridfinity Tool Drawer',
     kicker: 'Shop organization',
     summary:
-      'A Gridfinity drawer system I modeled in SolidWorks that holds every one of my tools.',
+      'Having to physically move between my various projects inspired me to design and build a mobile Gridfinity drawer system housed in a five-foot-long drawer on my 1988 Toyota pickup. I modeled every tool holder in SolidWorks, refining each design down to the smallest detail. Rather than settling for holders that simply worked, I focused on getting every fit, dimension, and detail just right.',
     meta: [
       ['System', 'Gridfinity'],
       ['Design', 'SolidWorks'],
