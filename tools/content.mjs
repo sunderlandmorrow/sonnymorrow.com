@@ -586,9 +586,9 @@ export const projects = [
   {
     slug: 'gridfinity-tool-drawer',
     title: 'Gridfinity Tool Drawer',
-    kicker: 'Shop organization',
+    kicker: 'tool organization',
     summary:
-      'Having to physically move between my various projects inspired me to design and build a mobile Gridfinity tool holding system, housed in a 5\' long drawer in my 1988 Toyota pickup. I modeled every tool holder in SolidWorks, refining each design down to the smallest detail. Rather than settling for holders that simply worked, I focused on getting every fit, dimension, and detail just right.',
+      'Having to physically move between my various projects inspired me to design and build a mobile tool holder system, housed in a 5\' long drawer in my 1988 Toyota pickup. I modeled every tool holder in SolidWorks, refining each design down to the smallest detail. Rather than settling for holders that simply worked, I focused on getting every fit, dimension, and detail just right.',
     meta: [
       ['System', 'Gridfinity'],
       ['Design', 'SolidWorks'],
@@ -610,7 +610,7 @@ export const projects = [
     title: '1988 Toyota Pickup Camper',
     kicker: 'Truck camper build',
     summary:
-      'A 1988 Toyota pickup with a custom-fit camper shell, lined in cedar, with a diesel heater and a solar system I designed to run a refrigerator.',
+      'A custom built camper and mobile workshop based on my 1988 Toyota Pickup. I lined the camper shell with cedar and designed a complete off-grid electrical system featuring a 200Ah battery bank, 400W of solar panels, and a 1,200W inverter. The setup also includes a diesel powered heater and 12V refrigerator, creating a comfortable space for extended trips while providing power for tools, equipment, and everyday needs.',
     meta: [
       ['Truck', '1988 Toyota pickup'],
       ['Shell', 'Custom fit'],
