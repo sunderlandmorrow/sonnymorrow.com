@@ -42,7 +42,7 @@ export const projects = [
     title: 'Adobe Tea House',
     kicker: 'Earth architecture',
     summary:
-      'A 12\' diameter adobe dome designed and built by hand after an apprenticeship at Cal-Earth Institute — now a tea house on Airbnb Experiences.',
+      'A 12\' diameter adobe dome I designed and built after an architecture apprenticeship at CalEarth Institute — now hosting guests as a tea house on Airbnb Experiences.',
     cover: 'pic01.jpeg',
     hero: 'pic01.jpeg',
     meta: [
@@ -138,7 +138,7 @@ export const projects = [
     title: 'Mercedes 300D',
     kicker: 'Mechanical restoration',
     summary:
-      'A 1984 Mercedes 300D with 230k miles, that I pulled the engine & transmission out of, refurbished and put it all back together.',
+      'A tired 1984 Mercedes-Benz 300D with 230,000 miles, purchased from its original owner. I pulled the engine and transmission, completely refurbished both, and brought the car back to life.',
     cover: '2.1.jpeg',
     hero: '2.1.jpeg',
     meta: [
@@ -314,7 +314,7 @@ export const projects = [
     title: 'Rocket Stove',
     kicker: 'Masonry heater',
     summary:
-      'The dome I built needed a heating system in the winter so I studied rocket stoves and designed and constructed one that nicely follows the contour of the dome. Guests now get to experience a cozy dome and are warmed by the bench in which they sit on.',
+      'The adobe dome needed a heating system for the winter, so I studied rocket stove design and designed and built one that follows the natural contours of the dome. The result is a cozy, wood-heated space where guests can relax on a radiant-heated bench, warmed from beneath as they sit.',
     cover: '4.12.jpeg',
     coverPos: '15% 50%',
     hero: '4.12.jpeg',
