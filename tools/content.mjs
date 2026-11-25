@@ -312,7 +312,7 @@ export const projects = [
   {
     slug: 'rocket-stove',
     title: 'Rocket Stove',
-    kicker: 'Masonry heater',
+    kicker: 'Thermal Mass heater',
     summary:
       'The adobe dome needed a heating system for the winter, so I studied rocket stove design and engineered and built one that follows the natural contours of the dome. Guests can now enjoy a cozy, wood heated space, warmed by the radiant bench on which they sit.',
     cover: '4.12.jpeg',
@@ -390,7 +390,7 @@ export const projects = [
     title: '1960 Airstream Safari',
     kicker: 'Vintage trailer restoration',
     summary:
-      'A 1960 Airstream Safari that my wife and I purchased from the original family who bought it new. It will serve as a tiny home while we build our forever home, then become a guest bedroom on our property.',
+      'A 1960 Airstream Safari that my wife and I purchased from the original family who bought it new. We are currently restoring it from the ground up. It will serve as a tiny home while we build our forever home, then become a guest bedroom on our property.',
     cover: 'airstream-interior-white-oak-floor.jpeg',
     coverPos: '50% 55%',
     hero: 'airstream-as-found-exterior.jpeg',
@@ -481,7 +481,7 @@ export const projects = [
     title: 'Airstream Pavilion',
     kicker: 'Timber structure',
     summary:
-      'A 26-foot heavy-timber pavilion I designed in SolidWorks and built to permanently shelter the Airstream. The two together will serve as a tiny house that will be able to withstand any weather.',
+      'A 26 foot heavy timber pavilion I designed in SolidWorks and built to permanently shelter the Airstream. The two together will serve as a tiny house that will be able to withstand any weather.',
     cover: 'pavilion-angle.jpeg',
     coverPos: '50% 62%',
     hero: 'pavilion-front.jpeg',
