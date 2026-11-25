@@ -267,7 +267,7 @@ ${header(prefix)}
 </section>
 
 <section class="p-intro wrap">
-  <dl class="meta">${p.meta.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+  ${p.meta?.length ? `<dl class="meta">${p.meta.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : ''}
   <div class="p-lede">${p.intro.map((t) => (typeof t !== 'string' ? block(t, prefix) : t.startsWith('TODO:') ? block({ todo: t.slice(5).trim() }) : `<p>${esc(t)}</p>`)).join('')}</div>
 </section>
 

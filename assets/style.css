@@ -134,6 +134,7 @@ em { font-style: italic; color: var(--accent); }
 .p-hero-text .kicker { color: rgb(255 255 255 / .8); }
 .p-hero h1 { font-size: clamp(46px, 8vw, 116px); font-weight: 350; margin-top: 10px; }
 .p-intro { display: grid; grid-template-columns: 300px 1fr; gap: clamp(24px, 5vw, 72px); padding-block: clamp(40px, 6vw, 80px); }
+.p-lede:only-child { grid-column: 2; }
 .meta { margin: 0; display: grid; gap: 0; align-content: start; }
 .meta div { padding: 12px 0; border-top: 1px solid var(--line); }
 .meta div:last-child { border-bottom: 1px solid var(--line); }
@@ -234,6 +235,7 @@ em { font-style: italic; color: var(--accent); }
   .card-link, .card:nth-child(odd of .card) .card-link { grid-template-columns: 1fr; }
   .card:nth-child(odd of .card) .card-img { order: 0; }
   .p-intro, .p-body { grid-template-columns: 1fr; }
+  .p-lede:only-child { grid-column: auto; }
   .toc { display: none; }
   .parts { grid-template-columns: 1fr; }
 }

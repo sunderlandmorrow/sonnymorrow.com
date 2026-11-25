@@ -211,7 +211,7 @@ export const projects = [
       {
         title: 'Wedding car',
         blocks: [
-          'A few years later, the 300D had a bigger job: it was our wedding car.',
+          'A few years later, the 300D was our wedding car:',
           ['mercedes-wedding-couple.jpeg'],
           ['mercedes-wedding-getaway.jpeg', 'mercedes-wedding-just-married.jpeg', 'mercedes-wedding-arch.jpeg'],
         ],
@@ -227,7 +227,7 @@ export const projects = [
       'Power steering pump (rebuilt)', 'Power steering filter', 'Air filter',
     ],
     outcome:
-      'Put back together, the engine is 100% leak-free and running as good as new. This mechanical refurbishment gives the car many more years on the road.',
+      'Back together, the engine is now completely leak free and running like new. Throughout this project, I gained an even greater appreciation for the thoughtful German engineering behind it. The attention to detail is simply astounding.',
   },
 
   {
@@ -238,12 +238,7 @@ export const projects = [
       'My late grandfather\'s 1964 Oldsmobile, passed down two generations. Its V8 engine was on the verge of catastrophic failure, so I gave it a much needed rebuild. While the engine was out, I also restored the engine bay, bringing it back to life alongside the engine.',
     cover: '3.22.jpeg',
     hero: '3.1.jpeg',
-    meta: [
-      ['Vehicle', '1964 Oldsmobile'],
-      ['Engine', 'Oldsmobile V8'],
-      ['Scope', 'Full rebuild & engine bay restore'],
-      ['Parts replaced', '19'],
-    ],
+    meta: [],
     intro: [
       'This is the mechanical restoration of my late grandfather’s 1964 Oldsmobile, passed down to my father and then to me. The main focus was rebuilding the engine — it was knocking horribly and would barely run.',
     ],
