@@ -390,7 +390,7 @@ export const projects = [
     title: '1960 Airstream Safari',
     kicker: 'Vintage trailer restoration',
     summary:
-      'My wife and I purchased this 1960 Airstream Safari from the original family who owned it. It will serve as a tiny home for us while we build our forever home. It will then be repurposed as a guest bedroom on our property.',
+      'A 1960 Airstream Safari that my wife and I purchased from the original family who bought it new. It will serve as a tiny home while we build our forever home, then become a guest bedroom on our property.',
     cover: 'airstream-interior-white-oak-floor.jpeg',
     coverPos: '50% 55%',
     hero: 'airstream-as-found-exterior.jpeg',
