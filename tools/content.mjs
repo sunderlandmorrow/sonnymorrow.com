@@ -588,7 +588,7 @@ export const projects = [
     title: 'Gridfinity Tool Drawer',
     kicker: 'Shop organization',
     summary:
-      'Having to physically move between my various projects inspired me to design and build a mobile Gridfinity drawer system housed in a five-foot-long drawer on my 1988 Toyota pickup. I modeled every tool holder in SolidWorks, refining each design down to the smallest detail. Rather than settling for holders that simply worked, I focused on getting every fit, dimension, and detail just right.',
+      'Having to physically move between my various projects inspired me to design and build a mobile Gridfinity tool holding system, housed in a 5\' long drawer in my 1988 Toyota pickup. I modeled every tool holder in SolidWorks, refining each design down to the smallest detail. Rather than settling for holders that simply worked, I focused on getting every fit, dimension, and detail just right.',
     meta: [
       ['System', 'Gridfinity'],
       ['Design', 'SolidWorks'],
