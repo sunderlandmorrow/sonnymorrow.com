@@ -14,7 +14,7 @@ export const site = {
   useCustomDomain: true,
   tagline: 'Earth, brick & iron — built by hand.',
   intro:
-    'Hi, I’m Sonny Morrow, a mechanical engineer working in the medical device industry. I’ve always been drawn to the process of turning ideas into real things. Whether designing an adobe tea house, building a heavy-timber pavilion, or restoring a 1960 Airstream, I approach every project with the same mindset: understand how it works, design it thoughtfully, build it, and obsess over the details until it’s right.',
+    'Hi, I\'m Sonny Morrow, a mechanical engineer working in the medical device industry. I\'ve always enjoyed working with my hands and bringing ideas to life. Whether designing, building, modifying, or restoring, I approach every project with curiosity and an obsession for detail. I\'m not afraid to rethink an approach or start over if that\'s what it takes to get things right. For me, the satisfaction is in the process just as much as the finished product.',
   // Home-page collage. Each tile links to its project.
   // The first tile is a wide "design vs. built" pair across the top row.
   collage: [
@@ -235,7 +235,7 @@ export const projects = [
     title: '1964 Oldsmobile V8',
     kicker: 'Engine rebuild',
     summary:
-      'My late grandfather\'s 1964 Oldsmobile, passed down two generations. Its V8 engine was on the verge of catastrophic failure, so I gave it a much needed rebuild.',
+      'My late grandfather\'s 1964 Oldsmobile, passed down two generations. Its V8 engine was on the verge of catastrophic failure, so I gave it a much needed rebuild. While the engine was out, I also restored the engine bay, bringing it back to life alongside the engine.',
     cover: '3.22.jpeg',
     hero: '3.1.jpeg',
     meta: [
@@ -481,7 +481,7 @@ export const projects = [
     title: 'Airstream Pavilion',
     kicker: 'Timber structure',
     summary:
-      'A heavy timber pavilion I designed in SolidWorks and built to permanently shelter the Airstream.',
+      'A heavy-timber pavilion designed in SolidWorks and built to permanently shelter the Airstream. Constructed from locally grown and milled Douglas fir harvested from Banner Mountain in Nevada City, CA.',
     cover: 'pavilion-angle.jpeg',
     coverPos: '50% 62%',
     hero: 'pavilion-front.jpeg',
@@ -588,7 +588,7 @@ export const projects = [
     title: 'Gridfinity Tool Drawer',
     kicker: 'tool organization',
     summary:
-      'Having to physically move between my various projects inspired me to design and build a mobile tool holder system, housed in a 5\' long drawer in my 1988 Toyota pickup. I modeled every tool holder in SolidWorks, refining each design down to the smallest detail. Rather than settling for holders that simply worked, I focused on getting every fit, dimension, and detail just right.',
+      'Having to move between my various projects inspired me to design and build a mobile tool organization system housed in a five-foot-long drawer in my 1988 Toyota pickup. I modeled every tool holder in SolidWorks, refining each design down to the smallest detail. Rather than settling for holders that simply worked, I focused on getting every fit, dimension, and detail just right. Each holder was then 3D printed on a Bambu Lab P1S.',
     meta: [
       ['System', 'Gridfinity'],
       ['Design', 'SolidWorks'],
