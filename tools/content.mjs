@@ -141,15 +141,10 @@ export const projects = [
       'A tired 1984 Mercedes-Benz 300D with 230,000 miles, purchased from its original owner. I pulled the engine and transmission, completely refurbished both, and brought the car back to life.',
     cover: '2.1.jpeg',
     hero: '2.1.jpeg',
-    meta: [
-      ['Vehicle', '1984 Mercedes-Benz 300D'],
-      ['Mileage', '230,000'],
-      ['Scope', 'Engine-out reseal & bottom end'],
-      ['Parts replaced', '22'],
-    ],
+    meta: [],
     intro: [
       'I picked up this 1984 Mercedes 300D for a low price. The body and interior were in great shape, but the mechanicals needed a lot of work. The engine leaked oil from many places — parking it meant a permanently stained driveway.',
-      'The goal was to refurbish the engine and track down any further repairs needed to make the car reliable and leak-free.',
+      'The goal was to completely refurbish the engine and track down any further repairs needed to make the car reliable.',
     ],
     chapters: [
       {
@@ -211,7 +206,7 @@ export const projects = [
       {
         title: 'Wedding car',
         blocks: [
-          'A few years later, the 300D was our wedding car:',
+          'A few years later, the 300D was used as our wedding car, adding another chapter to its story.',
           ['mercedes-wedding-couple.jpeg'],
           ['mercedes-wedding-getaway.jpeg', 'mercedes-wedding-just-married.jpeg', 'mercedes-wedding-arch.jpeg'],
         ],
@@ -313,12 +308,7 @@ export const projects = [
     cover: '4.12.jpeg',
     coverPos: '15% 50%',
     hero: '4.12.jpeg',
-    meta: [
-      ['Built for', 'The earthbag dome'],
-      ['Type', 'Rocket mass heater'],
-      ['Materials', 'Brick, earthen render, lime'],
-      ['Role', 'Design & build'],
-    ],
+    meta: [],
     intro: [
       'To be comfortable in the dome during winter, it needed a heater. After a lot of research I settled on a rocket stove — a highly efficient wood burner that uses far less wood than a traditional stove. I read a few books on the subject and set out to build one.',
     ],
@@ -326,7 +316,7 @@ export const projects = [
       {
         title: 'Planning',
         blocks: [
-          'I drew a floor plan of the system, then made a mock-up of the core to see roughly where the chimney would exit.',
+          'I drew a floor plan of the system, then made a mock-up of the core to see roughly where the chimney would need to exit.',
           ['4.1.jpeg', '4.2.jpeg'],
         ],
       },
@@ -476,7 +466,7 @@ export const projects = [
     title: 'Airstream Pavilion',
     kicker: 'Timber structure',
     summary:
-      'A heavy-timber pavilion designed in SolidWorks and built to permanently shelter the Airstream. Constructed from locally grown and milled Douglas fir harvested from Banner Mountain in Nevada City, CA.',
+      'A heavy-timber pavilion designed in my favorite CAD program, SolidWorks, and built to permanently shelter the Airstream. The structure is made entirely from locally grown and milled Douglas fir harvested from Banner Mountain in Nevada City, CA.',
     cover: 'pavilion-angle.jpeg',
     coverPos: '50% 62%',
     hero: 'pavilion-front.jpeg',
@@ -571,9 +561,90 @@ export const projects = [
     ],
     chapters: [
       { title: 'In CAD', blocks: [{ todo: 'SolidWorks screenshots or drawings of the cottage.' }] },
-      { title: 'As found', blocks: [{ todo: 'Before photos and what needed fixing.' }] },
-      { title: 'The work', blocks: [{ todo: 'The main stages of the restoration, with photos.' }] },
-      { title: 'Finished', blocks: [{ todo: 'After photos of the finished cottage.' }] },
+      {
+        title: 'As found',
+        blocks: [
+          'These are the listing photos from when we bought the property. The cottage was in rough shape: the red siding was faded and peeling, and the grass had grown up to the windows.',
+          ['cottage-before-1.jpeg'],
+          ['cottage-before-2.jpeg', 'cottage-before-3.jpeg'],
+          'Inside, the main room had a makeshift kitchen built from open shelving and a plywood counter, with bare subfloor showing underneath.',
+          ['cottage-before-4.jpeg', 'cottage-before-6.jpeg'],
+          'The bathroom had holes cut in the drywall, and the lower level (now the laundry room) was unfinished concrete with exposed wiring and plumbing.',
+          ['cottage-before-5.jpeg', 'cottage-before-7.jpeg'],
+        ],
+      },
+      {
+        title: 'Siding & paint',
+        blocks: [
+          'The exterior came first. We sanded the old red paint off the siding, down to bare wood in most places.',
+          ['cottage-siding-stripped.jpeg', 'cottage-siding-sanded.jpeg'],
+          'Then the whole cottage got a coat of white primer. This time-lapse covers a day of priming:',
+          ['cottage-priming-timelapse.mp4'],
+          'The two-story section of the cottage, set into the hillside, got the same treatment: primer, a light blue finish coat, and white trim.',
+          ['cottage-two-story-priming.jpeg', 'cottage-two-story-blue.jpeg'],
+          ['cottage-two-story-priming-timelapse.mp4'],
+          ['cottage-two-story-trim.jpeg', 'cottage-two-story-front.jpeg', 'cottage-blue-from-drive.jpeg'],
+        ],
+      },
+      {
+        title: 'Floor framing',
+        blocks: [
+          'Part of the floor had sagged. I opened it up to get at the framing underneath.',
+          ['cottage-floor-opened.jpeg', 'cottage-floor-level.jpeg'],
+          'From the laundry room below, I jacked the floor back up to level, then added new framing alongside the old joists to hold it there.',
+          ['cottage-floor-jack.jpeg', 'cottage-floor-jack-above.jpeg'],
+          ['cottage-floor-sistered.jpeg'],
+        ],
+      },
+      {
+        title: 'Walls & flooring',
+        blocks: [
+          'Inside, the walls were patched and primed, and new plank flooring went down throughout.',
+          ['cottage-interior-walls-primed.jpeg'],
+          ['cottage-flooring-timelapse.mp4'],
+          ['cottage-interior-floor.jpeg'],
+        ],
+      },
+      {
+        title: 'Bathroom',
+        blocks: [
+          'The shower was built from scratch: a drain cut into a new plywood subfloor, then cement board, then tile set with leveling clips to keep it flat.',
+          ['cottage-shower-drain.jpeg', 'cottage-shower-tile-clips.jpeg'],
+          ['cottage-shower-finished.jpeg'],
+        ],
+      },
+      {
+        title: 'Loft & ladder',
+        blocks: [
+          'A sleeping loft sits over the bathroom and closet, with a ladder and railing made from black iron pipe.',
+          ['cottage-ladder.jpeg', 'cottage-loft-railing.jpeg'],
+        ],
+      },
+      {
+        title: 'Kitchen',
+        blocks: [
+          'The kitchen went from a temporary counter to a full run of cabinets, a new range, and a tile backsplash.',
+          ['cottage-kitchen-cabinets-rough.jpeg', 'cottage-kitchen-cabinets.jpeg'],
+          ['cottage-kitchen-backsplash.jpeg', 'cottage-kitchen-counter.jpeg'],
+          ['cottage-kitchen-finished.jpeg', 'cottage-kitchen-range.jpeg'],
+        ],
+      },
+      {
+        title: 'Drainage',
+        blocks: [
+          'To keep water away from the foundation, we dug a trench around the cottage and laid drain pipe.',
+          ['cottage-drainage-trench.jpeg', 'cottage-drainage-pipe.jpeg'],
+        ],
+      },
+      {
+        title: 'Finished',
+        blocks: [
+          'The finished cottage: a new covered entry over the front door, and the two-story section in its new blue paint.',
+          ['cottage-exterior-porch.jpeg', 'cottage-exterior-finished.jpeg'],
+          ['cottage-interior-finished.jpeg'],
+          ['cottage-two-story-finished.jpeg'],
+        ],
+      },
     ],
     outcome: '',
   },

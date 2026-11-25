@@ -204,6 +204,9 @@ ${footer(prefix)}`;
 }
 
 // ---------- Project ----------
+// Previous / next card at the bottom of a project page: cover photo, label, title, kicker.
+const pagerCard = (q, cls, label, prefix) => `<a href="${prefix}projects/${q.slug}/" class="${cls}"><div class="pager-img">${cover(q.cover, prefix, { alt: '', sizes: '(min-width: 900px) 520px, 100vw', pos: q.coverPos })}</div><div class="pager-text"><span>${label}</span><strong>${esc(q.title)}</strong>${q.kicker ? `<em>${esc(q.kicker)}</em>` : ''}</div></a>`;
+
 function projectPage(p, i) {
   const prefix = '../../';
   const prev = projects[(i - 1 + projects.length) % projects.length];
@@ -286,8 +289,9 @@ ${header(prefix)}
 </div>
 
 <nav class="pager wrap" aria-label="More projects">
-  <a href="${prefix}projects/${prev.slug}/" class="prev"><span>← Previous</span><strong>${esc(prev.title)}</strong></a>
-  <a href="${prefix}projects/${next.slug}/" class="next"><span>Next →</span><strong>${esc(next.title)}</strong></a>
+  ${pagerCard(prev, 'prev', '← Previous', prefix)}
+  ${pagerCard(next, 'next', 'Next →', prefix)}
+  <a class="pager-home" href="${prefix}#work"><span aria-hidden="true">←</span> All projects</a>
 </nav>
 </main>
 ${footer(prefix)}`;
