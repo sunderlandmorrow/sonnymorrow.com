@@ -314,7 +314,7 @@ export const projects = [
     title: 'Rocket Stove',
     kicker: 'Masonry heater',
     summary:
-      'The adobe dome needed a heating system for the winter, so I studied rocket stove design and designed and built one that follows the natural contours of the dome. The result is a cozy, wood-heated space where guests can relax on a radiant-heated bench, warmed from beneath as they sit.',
+      'The adobe dome needed a heating system for the winter, so I studied rocket stove design and engineered and built one that follows the natural contours of the dome. Guests can now enjoy a cozy, wood heated space, warmed by the radiant bench on which they sit.',
     cover: '4.12.jpeg',
     coverPos: '15% 50%',
     hero: '4.12.jpeg',
@@ -390,7 +390,7 @@ export const projects = [
     title: '1960 Airstream Safari',
     kicker: 'Vintage trailer restoration',
     summary:
-      'A 1960 Airstream Safari, gutted down to nothing now being rebuilt from the floor up.',
+      'My wife and I purchased this 1960 Airstream Safari from the original family who owned it. It will serve as a tiny home for us while we build our forever home. It will then be repurposed as a guest bedroom on our property.',
     cover: 'airstream-interior-white-oak-floor.jpeg',
     coverPos: '50% 55%',
     hero: 'airstream-as-found-exterior.jpeg',
