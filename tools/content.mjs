@@ -560,7 +560,7 @@ export const projects = [
     slug: 'cottage-restoration',
     title: 'Cottage Restoration',
     kicker: 'Rental property restoration',
-    cover: 'cottage-before-after-split.jpeg',
+    cover: 'cottage-before-after-pair.jpeg',
     hero: 'cottage-exterior-hero.jpeg',
     summary:
       'A uniquely shaped 1940s cottage that my business partner and I restored on our rental property. We completely remodeled the interior and exterior, bringing the structure back to life while upgrading all of its mechanical systems. It is now fully restored and serving as a rental home in Grass Valley, CA.',
