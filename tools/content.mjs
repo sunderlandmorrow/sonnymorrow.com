@@ -26,12 +26,11 @@ export const site = {
         { image: 'pavilion-angle.jpeg', label: 'Built — timber pavilion', pos: '50% 62%' },
       ],
     },
-    { image: 'pic01.jpeg', project: 'earthbag-dome', label: 'Adobe Tea House in Grass Valley, CA', pos: '6% 60%' },
+    { image: 'dome-before-after-split.jpeg', project: 'earthbag-dome', label: 'Adobe Tea House: before & after', pos: '50% 50%' },
     { image: 'airstream-interior-white-oak-floor.jpeg', project: 'airstream-safari-1960', label: '1960 Airstream', pos: '50% 60%' },
     { image: '2.35.jpeg', project: 'mercedes-300d', label: '1984 Mercedes 300D', pos: '50% 55%' },
   ],
   heroImage: 'pic01.jpeg',
-  video: 'https://www.youtube.com/watch?v=Dcu71gSOogg&t=421s',
 };
 
 // Each project can set  section: 'professional'  — anything else shows under Personal projects.
@@ -140,7 +139,6 @@ export const projects = [
     ],
     outcome:
       'The dome now works beautifully as a tea house. It’s a truly unique space, and guests always leave wondering about its unusual construction. A popular YouTube channel asked to film a short piece about it.',
-    video: { id: 'Dcu71gSOogg', start: 421 },
   },
 
   {
@@ -562,7 +560,7 @@ export const projects = [
     slug: 'cottage-restoration',
     title: 'Cottage Restoration',
     kicker: 'Rental property restoration',
-    cover: 'cottage-exterior-hero.jpeg',
+    cover: 'cottage-before-after-split.jpeg',
     hero: 'cottage-exterior-hero.jpeg',
     summary:
       'A uniquely shaped 1940s cottage that my business partner and I restored on our rental property. We completely remodeled the interior and exterior, bringing the structure back to life while upgrading all of its mechanical systems. It is now fully restored and serving as a rental home in Grass Valley, CA.',
@@ -684,7 +682,26 @@ export const projects = [
           ['cottage-laundry.jpeg', 'cottage-laundry-workshop.jpeg'],
         ],
       },
+      {
+        title: 'Then & now',
+        blocks: [
+          'The listing photos from when we bought the property, next to the same views today.',
+          ['cottage-before-after-split.jpeg'],
+          'The lower-level side, from the old stairs:',
+          ['cottage-before-1.jpeg', 'cottage-exterior-laundry-path.jpeg'],
+          'The front entry, now with a covered awning, new door and new step:',
+          ['cottage-before-3.jpeg', 'cottage-exterior-awning.jpeg'],
+          'The main room: the plywood counter and open shelving became a full kitchen, with new flooring, paint and lighting throughout.',
+          ['cottage-before-4.jpeg', 'cottage-kitchen-wide.jpeg'],
+          ['cottage-before-6.jpeg', 'cottage-main-room.jpeg'],
+          'The bathroom, rebuilt from the subfloor up:',
+          ['cottage-before-5.jpeg', 'cottage-bathroom-vanity.jpeg'],
+          'And the lower level, from an unfinished space with exposed wiring to a working laundry room:',
+          ['cottage-before-7.jpeg', 'cottage-laundry-workshop.jpeg'],
+        ],
+      },
     ],
+    beforeAfter: { before: 'cottage-slider-before.jpeg', after: 'cottage-slider-after.jpeg', pos: 30 },
     outcome: '',
   },
 

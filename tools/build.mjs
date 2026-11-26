@@ -233,11 +233,11 @@ function projectPage(p, i) {
     ? `<section class="chapter reveal" id="before-after">
       <h2><span class="ch-num">·</span>Before &amp; after</h2>
       <p class="hint">Drag the handle to compare.</p>
-      <div class="ba" style="--pos:50%">
+      <div class="ba" style="--pos:${p.beforeAfter.pos || 50}%">
         ${img(p.beforeAfter.after, prefix, { alt: 'After', cls: 'ba-after' })}
         <div class="ba-before">${img(p.beforeAfter.before, prefix, { alt: 'Before' })}</div>
         <span class="ba-label l">Before</span><span class="ba-label r">After</span>
-        <input type="range" min="0" max="100" value="50" aria-label="Before and after comparison">
+        <input type="range" min="0" max="100" value="${p.beforeAfter.pos || 50}" aria-label="Before and after comparison">
         <span class="ba-handle" aria-hidden="true"></span>
       </div>
     </section>`
