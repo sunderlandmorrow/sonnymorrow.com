@@ -788,7 +788,7 @@ export const projects = [
     summary:
       'A motor-driven gear transmission for EME 150B, the mechanical design course at UC Davis. I modeled the full assembly in SolidWorks and built the hauler, designing every part to be easy to print, assemble and adjust. In the class\'s Shigley Hauler competition it pulled a weighted load up a ramp at steeper and steeper angles, and our team took first place.',
     cover: 'shigley-hauler-finished.jpeg',
-    hero: 'shigley-hauler-finished.jpeg',
+    hero: 'shigley-hauler-cad.jpeg',
     meta: [
       ['Course', 'EME 150B, UC Davis'],
       ['Team', 'SH✱GLEY'],
