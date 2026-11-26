@@ -61,8 +61,8 @@ function header(prefix, current) {
   return `<header class="site-header">
   <a class="wordmark" href="${prefix}">${esc(site.name)}</a>
   <nav>
-    <a href="${prefix}#professional">Professional</a>
     <a href="${prefix}#personal">Personal</a>
+    <a href="${prefix}#professional">Professional</a>
     <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><span></span></button>
   </nav>
 </header>`;
@@ -174,8 +174,8 @@ function home() {
   ${body}
 </section>`;
   };
-  // Professional goes first once it has projects; until then it sits after personal.
-  const order = inSection('professional').length ? ['professional', 'personal'] : ['personal', 'professional'];
+  // Personal projects first (the Tea House leads), professional work after.
+  const order = ['personal', 'professional'];
 
   return `${head({ title: `${site.name} — Projects`, description: site.intro, prefix, image: site.heroImage })}
 <body class="home">
