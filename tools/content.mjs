@@ -579,7 +579,7 @@ export const projects = [
         title: 'In CAD',
         blocks: [
           'Before building the new covered entry, I modeled the cottage in SolidWorks to size the awning and check how it would look on the front of the house.',
-          ['cottage-solidworks-model.jpeg', 'cottage-solidworks-model-laundry.jpeg'],
+          ['cottage-solidworks-model.jpeg', 'cottage-solidworks-model-laundry.jpeg', 'cottage-solidworks-model-back.jpeg'],
           'I then rendered the model with siding, trim and roofing to see the finished look before we built it.',
           ['cottage-render-front34.jpeg'],
           ['cottage-render-awning.jpeg', 'cottage-render-lower34.jpeg'],
