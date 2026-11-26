@@ -786,7 +786,7 @@ export const projects = [
     title: 'Shigley Hauler 2.0',
     kicker: 'Engineering competition · 1st place',
     summary:
-      'A motor-driven gear transmission my team and I designed and built for EME 150B, the mechanical design course at UC Davis. In the class\'s Shigley Hauler competition, it pulled a weighted load up a ramp at steeper and steeper angles, and our team took first place.',
+      'A motor-driven gear transmission for EME 150B, the mechanical design course at UC Davis. I modeled the full assembly in SolidWorks and built the hauler, designing every part to be easy to print, assemble and adjust. In the class\'s Shigley Hauler competition it pulled a weighted load up a ramp at steeper and steeper angles, and our team took first place.',
     cover: 'shigley-hauler-finished.jpeg',
     hero: 'shigley-hauler-finished.jpeg',
     meta: [
@@ -794,20 +794,28 @@ export const projects = [
       ['Team', 'SH✱GLEY'],
       ['Result', '1st place'],
       ['Build', '3D printed frame & gears'],
+      ['My role', 'CAD & build'],
     ],
     intro: [
       'For the final project in EME 150B, each team designed and built a transmission to haul a load up an inclined ramp. Runs were timed at increasing angles and loads, measured in "Shigleys".',
-      { todo: 'Your role on the team, and the design goals: motor, gear ratio, and why you chose them.' },
+      'I took on the design and the build: I modeled the complete hauler in SolidWorks, then printed, machined and assembled it. My teammates handled the written reports and analysis the course required. It was a team effort, and it came together into a first-place finish.',
     ],
     chapters: [
       {
-        title: 'Design & parts',
+        title: 'Modeled first',
         blocks: [
-          'The frame, gears and shaft supports were 3D printed, then fitted with steel shafts, bearings and the drive motor.',
+          'Before printing a single part, I modeled the entire assembly in SolidWorks: the frame, bearing holders, gears, hubs, spools, shafts, bearings, motor, battery pack and switch. Building it virtually first let me check gear mesh, shaft spacing and clearances, and catch interferences before they cost print time.',
+          ['shigley-hauler-cad.jpeg', 'shigley-hauler-cad-front.jpeg'],
+        ],
+      },
+      {
+        title: 'Designed for manufacturing',
+        blocks: [
+          'Design for manufacturing (DFM) drove most of the decisions. Every custom part was shaped to print cleanly on a desktop 3D printer, with flat faces down on the bed and no fragile overhangs, so parts came off the printer ready to use and could be reprinted quickly if something needed to change.',
+          'Wherever possible I used off-the-shelf hardware instead of printing it: steel rotary shafts, ball bearings, set screws and socket-head screws from McMaster-Carr. Printed plastic only had to do what printed plastic is good at, while the precision, load-bearing interfaces ran on steel and real bearings.',
+          'Most importantly, I designed in adjustability. Each bearing holder is a separate block that bolts to the frame, so shaft positions and gear mesh could be fine-tuned after assembly rather than being locked in by the print. The gears and spools mount on set-screw hubs, so they can slide along their shafts to line up with their mating gears. That adjustability turned out to be critical: printed parts never come out exactly to dimension, and being able to dial the gear train in on the bench is what made it run smoothly under load.',
           ['shigley-hauler-shafts.jpeg', 'shigley-hauler-frame.jpeg'],
           ['shigley-hauler-parts.jpeg', 'shigley-hauler-parts-layout.jpeg'],
-          'The full assembly in SolidWorks: the motor and battery pack at one end, driving the gear train across the shafts to the spools.',
-          ['shigley-hauler-cad.jpeg', 'shigley-hauler-cad-front.jpeg'],
         ],
       },
       {
