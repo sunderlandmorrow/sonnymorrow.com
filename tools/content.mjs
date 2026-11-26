@@ -623,6 +623,9 @@ export const projects = [
           'The shower was built from scratch: a drain cut into a new plywood subfloor, then cement board, then tile set with leveling clips to keep it flat.',
           ['cottage-shower-drain.jpeg', 'cottage-shower-tile-clips.jpeg'],
           ['cottage-shower-finished.jpeg'],
+          'The finished bathroom: a glass shower enclosure, a vanity, and glass shelving under the window.',
+          ['cottage-shower-door.jpeg', 'cottage-shower-tile.jpeg'],
+          ['cottage-bathroom-vanity.jpeg', 'cottage-bathroom-shelves.jpeg'],
         ],
       },
       {
@@ -630,6 +633,7 @@ export const projects = [
         blocks: [
           'A sleeping loft sits over the bathroom and closet, with a ladder and railing made from black iron pipe.',
           ['cottage-ladder.jpeg', 'cottage-loft-railing.jpeg'],
+          ['cottage-loft-below.jpeg', 'cottage-loft-floor.jpeg'],
         ],
       },
       {
@@ -639,6 +643,8 @@ export const projects = [
           ['cottage-kitchen-cabinets-rough.jpeg', 'cottage-kitchen-cabinets.jpeg'],
           ['cottage-kitchen-backsplash.jpeg', 'cottage-kitchen-counter.jpeg'],
           ['cottage-kitchen-finished.jpeg', 'cottage-kitchen-range.jpeg'],
+          ['cottage-kitchen-wide.jpeg'],
+          ['cottage-kitchen-sink.jpeg', 'cottage-kitchen-appliances.jpeg', 'cottage-kitchen-drawer.jpeg'],
         ],
       },
       {
@@ -655,6 +661,11 @@ export const projects = [
           ['cottage-exterior-porch.jpeg', 'cottage-exterior-finished.jpeg'],
           ['cottage-interior-finished.jpeg'],
           ['cottage-two-story-finished.jpeg'],
+          'Inside, the main room has the kitchen along one wall, a closet and the loft at the back, and exposed beams overhead with a ductless mini-split for heating and cooling.',
+          ['cottage-main-room.jpeg', 'cottage-loft-closet.jpeg'],
+          ['cottage-beams-minisplit.jpeg', 'cottage-beam-lights.jpeg', 'cottage-closet-shelf.jpeg'],
+          'Downstairs, the laundry room in the lower level.',
+          ['cottage-laundry.jpeg', 'cottage-laundry-workshop.jpeg'],
         ],
       },
     ],
