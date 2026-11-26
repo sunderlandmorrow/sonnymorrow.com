@@ -406,6 +406,9 @@ export const projects = [
         blocks: [
           'I modeled the trailer in SolidWorks: the shell, roof, windows and running gear.',
           ['airstream-cad-model.png'],
+          'The trailer model also went into the pavilion assembly, to check clearances under the roof.',
+          ['pavilion-cad-with-airstream.jpeg'],
+          { link: 'airstream-pavilion', text: 'See the pavilion build' },
         ],
       },
       {
@@ -500,7 +503,7 @@ export const projects = [
           ['pavilion-dwg-overview.png'],
           'From the model I made a 13-sheet drawing set: an overview, layouts for the post anchors, rafters and roof sheathing, and a dimensioned drawing for every component.',
           'The roof is a single slope — tall posts on one side and short posts on the other — laid out to carry a full array of solar panels.',
-          { todo: 'Any CAD screenshots you want to add (the 3D views with the solar panels look great), and whether the panels are installed yet.' },
+          ['pavilion-cad-with-airstream.jpeg'],
         ],
       },
       {
@@ -576,6 +579,8 @@ export const projects = [
         title: 'In CAD',
         blocks: [
           'Before building the new covered entry, I modeled the cottage in SolidWorks to size the awning and check how it would look on the front of the house.',
+          ['cottage-solidworks-model.jpeg', 'cottage-solidworks-model-laundry.jpeg'],
+          'I then rendered the model with siding, trim and roofing to see the finished look before we built it.',
           ['cottage-render-front34.jpeg'],
           ['cottage-render-awning.jpeg', 'cottage-render-lower34.jpeg'],
         ],
@@ -785,7 +790,7 @@ export const projects = [
           ['shigley-hauler-shafts.jpeg', 'shigley-hauler-frame.jpeg'],
           ['shigley-hauler-parts.jpeg', 'shigley-hauler-parts-layout.jpeg'],
           'The full assembly in SolidWorks: the motor and battery pack at one end, driving the gear train across the shafts to the spools.',
-          ['shigley-hauler-cad.jpeg'],
+          ['shigley-hauler-cad.jpeg', 'shigley-hauler-cad-front.jpeg'],
         ],
       },
       {
