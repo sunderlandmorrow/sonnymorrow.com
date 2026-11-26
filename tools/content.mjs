@@ -784,7 +784,8 @@ export const projects = [
           'The frame, gears and shaft supports were 3D printed, then fitted with steel shafts, bearings and the drive motor.',
           ['shigley-hauler-shafts.jpeg', 'shigley-hauler-frame.jpeg'],
           ['shigley-hauler-parts.jpeg', 'shigley-hauler-parts-layout.jpeg'],
-          { todo: 'CAD screenshots and the gear train layout.' },
+          'The full assembly in SolidWorks: the motor and battery pack at one end, driving the gear train across the shafts to the spools.',
+          ['shigley-hauler-cad.jpeg'],
         ],
       },
       {
