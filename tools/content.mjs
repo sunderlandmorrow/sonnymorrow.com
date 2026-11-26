@@ -559,6 +559,8 @@ export const projects = [
     slug: 'cottage-restoration',
     title: 'Cottage Restoration',
     kicker: 'Rental property restoration',
+    cover: 'cottage-exterior-hero.jpeg',
+    hero: 'cottage-exterior-hero.jpeg',
     summary:
       'A uniquely shaped 1940s cottage that my business partner and I restored on our rental property. We completely remodeled the interior and exterior, bringing the structure back to life while upgrading all of its mechanical systems. It is now fully restored and serving as a rental home in Grass Valley, CA.',
     meta: [
@@ -570,7 +572,14 @@ export const projects = [
       { todo: 'Where the cottage is, what shape it was in, and what the restoration covered.' },
     ],
     chapters: [
-      { title: 'In CAD', blocks: [{ todo: 'SolidWorks screenshots or drawings of the cottage.' }] },
+      {
+        title: 'In CAD',
+        blocks: [
+          'Before building the new covered entry, I modeled the cottage in SolidWorks to size the awning and check how it would look on the front of the house.',
+          ['cottage-render-front34.jpeg'],
+          ['cottage-render-awning.jpeg', 'cottage-render-lower34.jpeg'],
+        ],
+      },
       {
         title: 'As found',
         blocks: [
@@ -658,6 +667,8 @@ export const projects = [
         title: 'Finished',
         blocks: [
           'The finished cottage: a new covered entry over the front door, and the two-story section in its new blue paint.',
+          ['cottage-exterior-hillside.jpeg', 'cottage-exterior-laundry-path.jpeg'],
+          ['cottage-exterior-awning.jpeg'],
           ['cottage-exterior-porch.jpeg', 'cottage-exterior-finished.jpeg'],
           ['cottage-interior-finished.jpeg'],
           ['cottage-two-story-finished.jpeg'],
