@@ -127,6 +127,15 @@ export const projects = [
           ['4.12.jpeg', '5o.jpeg'],
         ],
       },
+      {
+        title: 'Finished',
+        blocks: [
+          'The finished tea house, ready for guests.',
+          ['dome-finished-exterior.jpeg'],
+          ['dome-finished-interior.jpeg', 'dome-finished-stove.jpeg'],
+          ['dome-finished-bench.jpeg', 'dome-finished-doorway.jpeg', 'dome-finished-ceiling.jpeg'],
+        ],
+      },
     ],
     outcome:
       'The dome now works beautifully as a tea house. It’s a truly unique space, and guests always leave wondering about its unusual construction. A popular YouTube channel asked to film a short piece about it.',
@@ -583,6 +592,8 @@ export const projects = [
           'The two-story section of the cottage, set into the hillside, got the same treatment: primer, a light blue finish coat, and white trim.',
           ['cottage-two-story-priming.jpeg', 'cottage-two-story-blue.jpeg'],
           ['cottage-two-story-priming-timelapse.mp4'],
+          'Then the blue went on. This time-lapse shows the finish coat going over the primer:',
+          ['cottage-blue-paint-timelapse.mp4'],
           ['cottage-two-story-trim.jpeg', 'cottage-two-story-front.jpeg', 'cottage-blue-from-drive.jpeg'],
         ],
       },
@@ -675,6 +686,7 @@ export const projects = [
     slug: 'toyota-pickup-camper-1988',
     title: '1988 Toyota Pickup Camper',
     kicker: 'Truck camper build',
+    cover: 'camper-truck-exterior.jpeg',
     summary:
       'A custom built camper and mobile workshop based on my 1988 Toyota Pickup. I lined the camper shell with cedar and designed a complete off-grid electrical system featuring a 200Ah battery bank, 400W of solar panels, and a 1,200W inverter. The setup also includes a diesel powered heater and 12V refrigerator, creating a comfortable space for extended trips while providing power for tools, equipment, and everyday needs.',
     meta: [
@@ -691,11 +703,86 @@ export const projects = [
     ],
     chapters: [
       { title: 'Fitting the shell', blocks: [{ todo: 'How the camper shell was custom fit to the truck, with photos.' }] },
-      { title: 'Cedar interior', blocks: [{ todo: 'Lining the inside with cedar, plus the bed and storage layout.' }] },
+      {
+        title: 'Cedar interior',
+        blocks: [
+          'I lined the walls, doors and ceiling of the shell with cedar boards, working around the screened side windows.',
+          ['camper-cedar-install.jpeg', 'camper-cedar-walls.jpeg'],
+          ['camper-cedar-ceiling.jpeg'],
+          { todo: 'The bed and storage layout.' },
+        ],
+      },
       { title: 'Diesel heater', blocks: [{ todo: 'The heater, where it is mounted, fuel and exhaust routing.' }] },
-      { title: 'Solar & refrigerator', blocks: [{ todo: 'The solar design: panel, battery, controller, wiring, and the refrigerator it runs.' }] },
-      { title: 'Finished', blocks: [{ todo: 'Photos of the finished camper, inside and out.' }] },
+      {
+        title: 'Solar & refrigerator',
+        blocks: [
+          'Before buying any parts, I worked out how much power the camper would actually use in a day. I listed every load (the MaxxAir 7500K roof fan, an ICECO VL35 ProS refrigerator, my phone and laptop, a small rice cooker and six puck lights) and estimated each one from manufacturer data and real-world tests. That came to about 1,100 Wh a day, or roughly 92 Ah at 12 V.',
+          ['camper-power-budget.png'],
+          'Doubling that for a day of backup pointed to a 200 Ah lithium battery bank. Recharging it in about six hours of sun takes roughly 370 W of panel, and the charge-controller sizing landed on a 30 A Victron MPPT 100/30, which leaves room to add panels later.',
+          ['camper-battery-solar-sizing.png'],
+          'Then I drew up the full wiring diagram: solar panels to the charge controller, the battery bank feeding a fuse block and a Victron 12/1200 pure sine wave inverter, and separate circuits for the fan, the refrigerator and three pairs of lights.',
+          ['camper-wiring-diagram.png'],
+        ],
+      },
+      {
+        title: 'Finished',
+        blocks: [
+          'The finished camper on the truck.',
+          ['camper-truck-exterior.jpeg'],
+        ],
+      },
     ],
     outcome: '',
+  },
+
+  {
+    slug: 'shigley-hauler',
+    section: 'professional',
+    title: 'Shigley Hauler 2.0',
+    kicker: 'Engineering competition · 1st place',
+    summary:
+      'A motor-driven gear transmission my team and I designed and built for EME 150B, the mechanical design course at UC Davis. In the class\'s Shigley Hauler competition, it pulled a weighted load up a ramp at steeper and steeper angles, and our team took first place.',
+    cover: 'shigley-hauler-finished.jpeg',
+    hero: 'shigley-hauler-finished.jpeg',
+    meta: [
+      ['Course', 'EME 150B, UC Davis'],
+      ['Team', 'SH✱GLEY'],
+      ['Result', '1st place'],
+      ['Build', '3D printed frame & gears'],
+    ],
+    intro: [
+      'For the final project in EME 150B, each team designed and built a transmission to haul a load up an inclined ramp. Runs were timed at increasing angles and loads, measured in "Shigleys".',
+      { todo: 'Your role on the team, and the design goals: motor, gear ratio, and why you chose them.' },
+    ],
+    chapters: [
+      {
+        title: 'Design & parts',
+        blocks: [
+          'The frame, gears and shaft supports were 3D printed, then fitted with steel shafts, bearings and the drive motor.',
+          ['shigley-hauler-shafts.jpeg', 'shigley-hauler-frame.jpeg'],
+          ['shigley-hauler-parts.jpeg', 'shigley-hauler-parts-layout.jpeg'],
+          { todo: 'CAD screenshots and the gear train layout.' },
+        ],
+      },
+      {
+        title: 'Assembly',
+        blocks: [
+          'Fully assembled, with the gear train stacked across five shafts between the side plates.',
+          ['shigley-hauler-assembled.jpeg', 'shigley-hauler-in-hand.jpeg'],
+        ],
+      },
+      {
+        title: 'Competition day',
+        blocks: [
+          'Every team brought their hauler to the engineering shop for the final runs.',
+          ['shigley-hauler-competition-floor.jpeg'],
+          'Each hauler was clamped to the top of the ramp, and its line was hooked to the loaded sled at the bottom.',
+          ['shigley-hauler-team.jpeg', 'shigley-hauler-on-ramp.jpeg', 'shigley-hauler-mounting.mp4'],
+          'Our times: 5.5 s at 20° with one Shigley, 12 s at 30° with two, and 30.69 s at 40° with four. That was enough for first place.',
+          ['shigley-hauler-results.jpeg'],
+        ],
+      },
+    ],
+    outcome: 'First place in the EME 150B Shigley Hauler competition.',
   },
 ];
