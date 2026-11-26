@@ -4,6 +4,7 @@
 //   "a string"            → a paragraph
 //   ["a.jpeg", "b.jpeg"]  → a photo group (1 = full width, 2 = side by side, 3+ = grid)
 //   { note: "..." }       → a small italic aside
+//   { stack: ["a.jpeg", "b.jpeg"] } → photos one above the other, each full width
 // Photos live in /images.
 
 export const site = {
@@ -130,8 +131,8 @@ export const projects = [
       {
         title: 'Finished',
         blocks: [
-          'The finished tea house, ready for guests.',
-          ['dome-finished-exterior.jpeg'],
+          'From the bare earthbag shell, before any plaster went on, to the finished tea house:',
+          { stack: ['dome-shell-before-plaster.jpeg', 'dome-finished-exterior.jpeg'] },
           ['dome-finished-interior.jpeg', 'dome-finished-stove.jpeg'],
           ['dome-finished-bench.jpeg', 'dome-finished-doorway.jpeg', 'dome-finished-ceiling.jpeg'],
         ],

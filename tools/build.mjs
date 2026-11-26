@@ -100,13 +100,14 @@ function loopVideo(file, prefix) {
 
 // Photos are never cropped: each row is "justified" — every photo keeps its own
 // shape and the row's widths are shared so all photos in a row are the same height.
-function gallery(files, prefix) {
+// stacked = true puts every photo on its own full-width row (used by { stack: [...] }).
+function gallery(files, prefix, stacked = false) {
   const n = files.length;
   // Split into rows of at most 3 (4 → 2+2, 7 → 3+2+2 …).
   const rows = [];
   let rest = [...files];
   while (rest.length) {
-    const take = rest.length === 4 ? 2 : Math.min(3, rest.length);
+    const take = stacked ? 1 : rest.length === 4 ? 2 : Math.min(3, rest.length);
     rows.push(rest.slice(0, take));
     rest = rest.slice(take);
   }
@@ -116,7 +117,7 @@ function gallery(files, prefix) {
     const inner = f.endsWith('.mp4') ? loopVideo(f, prefix) : `<a class="ph" href="${prefix}images/${esc(f)}" data-lb>${img(f, prefix, { sizes })}</a>`;
     return `<div class="gi" style="--r:${r}">${inner}</div>`;
   };
-  return `<div class="gallery${n === 1 ? ' g1' : ''}">${rows
+  return `<div class="gallery${n === 1 || stacked ? ' g1' : ''}">${rows
     .map((row) => `<div class="grow">${row.map((f) => item(f, row.length)).join('')}</div>`)
     .join('')}</div>`;
 }
@@ -124,6 +125,7 @@ function gallery(files, prefix) {
 function block(b, prefix) {
   if (typeof b === 'string') return `<p>${esc(b)}</p>`;
   if (Array.isArray(b)) return gallery(b, prefix);
+  if (b.stack) return gallery(b.stack, prefix, true);
   if (b.todo) return `<div class="todo"><strong>To add</strong>${esc(b.todo)}</div>`;
   if (b.note) return `<p class="note">${esc(b.note)}</p>`;
   if (b.link) return `<p><a class="inline-link" href="${prefix}projects/${b.link}/">${esc(b.text)} →</a></p>`;
@@ -320,7 +322,7 @@ else if (fs.existsSync(cname)) fs.unlinkSync(cname);
 write('.nojekyll', '');
 
 // Report unused images (handy for cleanup)
-const used = new Set([site.heroImage, ...site.collage.flatMap((t) => (t.pair ? t.pair.map((h) => h.image) : [t.image])), ...projects.flatMap((p) => [p.cover, p.hero, ...p.chapters.flatMap((c) => c.blocks.filter(Array.isArray).flat()), p.beforeAfter?.before, p.beforeAfter?.after].filter(Boolean))]);
+const used = new Set([site.heroImage, ...site.collage.flatMap((t) => (t.pair ? t.pair.map((h) => h.image) : [t.image])), ...projects.flatMap((p) => [p.cover, p.hero, ...p.chapters.flatMap((c) => c.blocks.flatMap((b) => (Array.isArray(b) ? b : b?.stack || []))), p.beforeAfter?.before, p.beforeAfter?.after].filter(Boolean))]);
 const unused = fs.readdirSync(path.join(root, 'images')).filter((f) => !used.has(f) && !f.endsWith('-poster.jpeg'));
 if (missing.size) console.warn('MISSING images:', [...missing].join(', '));
 console.log(`Built ${projects.length + 2} pages. Unused images: ${unused.length ? unused.join(', ') : 'none'}`);
