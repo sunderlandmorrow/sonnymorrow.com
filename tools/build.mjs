@@ -284,7 +284,7 @@ ${header(prefix)}
     ${parts}
     <section class="chapter outcome reveal">
       <h2><span class="ch-num">✓</span>${p.status === 'in-progress' ? 'Where it stands' : 'The result'}</h2>
-      ${p.outcome ? `<p>${esc(p.outcome)}</p>` : '<div class="todo"><strong>To add</strong>How it turned out — a short wrap-up once the project is done.</div>'}
+      ${p.outcome ? `<p>${esc(p.outcome)}</p>` : '<div class="todo"><strong>To add</strong>There were a million details in this project but it is hard to capture them all. The attention to detail was critical for us becuase we wanted the cottage to not only sell itself in the rental market but to stand the test of time and be a reliable structure without any issues. Something that could bring in passive income and have it stay passive. Done once, done right. The cottage is now renting out and our tenant loves it.</div>'}
     </section>
     ${video}
   </article>

@@ -400,7 +400,7 @@ export const projects = [
     ],
     chapters: [
       {
-        title: 'In CAD',
+        title: 'CAD Mockup',
         blocks: [
           'I modeled the trailer in SolidWorks: the shell, roof, windows and running gear.',
           ['airstream-cad-model.png'],
@@ -579,7 +579,7 @@ export const projects = [
         ],
       },
       {
-        title: 'In CAD',
+        title: 'CAD Mockup',
         blocks: [
           'Our first step was to quickly mock up the structure. My business partner called out measurements while I drew up the building in SOLIDWORKS. We wanted to add a front awning and ensure the proportions looked okay. Also we wanted to render the structure to see what color suited it best.',
           ['cottage-solidworks-model.jpeg', 'cottage-solidworks-model-laundry.jpeg', 'cottage-solidworks-model-back.jpeg'],
@@ -591,11 +591,10 @@ export const projects = [
       {
         title: 'Siding & paint',
         blocks: [
-          'The exterior came first. We sanded the old red paint off the siding, down to bare wood in most places. Some pieces were too far gone and we had to replace some. The prep work was extreme to say the least. We were aiming for an oil based paint job that would last years and years. The prep work was extreme to say the least. We were aiming for an oil based paint job that would last years and years.',
+          'The exterior came first. We sanded the old red paint off the siding, down to bare wood in most places. Some pieces were too far gone and we had to replace some. The prep work was extreme to say the least. We were aiming for an oil based paint job that would last years and years. The prep work was extreme to say the least.',
           ['cottage-siding-stripped.jpeg', 'cottage-siding-sanded.jpeg'],
-          'Then the whole cottage got a coat of white primer. This time-lapse covers a day of priming:',
+          'Then the whole cottage got a coat of white primer:',
           ['cottage-priming-timelapse.mp4'],
-          'The two-story section of the cottage, set into the hillside, got the same treatment: primer, a light blue finish coat, and white trim.',
           ['cottage-two-story-priming.jpeg', 'cottage-two-story-blue.jpeg'],
           ['cottage-two-story-priming-timelapse.mp4'],
           'Then the blue went on. This time-lapse shows the finish coat going over the primer:',
@@ -646,7 +645,8 @@ export const projects = [
           ['cottage-kitchen-cabinets-rough.jpeg', 'cottage-kitchen-cabinets.jpeg'],
           ['cottage-kitchen-backsplash.jpeg', 'cottage-kitchen-counter.jpeg'],
           ['cottage-kitchen-wide.jpeg'],
-          ['cottage-kitchen-sink.jpeg', 'cottage-kitchen-appliances.jpeg', 'cottage-kitchen-drawer.jpeg'],
+          ['cottage-kitchen-sink.jpeg', 'cottage-kitchen-appliances.jpeg'],
+          ['cottage-kitchen-drawer.jpeg'],
         ],
       },
       {
@@ -659,7 +659,7 @@ export const projects = [
           'Inside, the main room has the kitchen along one wall, a closet and the loft at the back, and exposed beams overhead with a ductless mini-split for heating and cooling.',
           ['cottage-main-room.jpeg', 'cottage-loft-closet.jpeg'],
           ['cottage-beams-minisplit.jpeg', 'cottage-beam-lights.jpeg', 'cottage-closet-shelf.jpeg'],
-          'Downstairs, the laundry room in the lower level.',
+          'Downstairs, the laundry room/storage area:',
           ['cottage-laundry.jpeg', 'cottage-laundry-workshop.jpeg'],
         ],
       },
@@ -667,16 +667,15 @@ export const projects = [
         title: 'Then & now',
         blocks: [
           'The listing photos from when we bought the property, next to the same views today.',
-          'The lower-level side, from the old stairs:',
           ['cottage-before-1.jpeg', 'cottage-exterior-laundry-path.jpeg'],
           'The front entry, now with a covered awning, new door and new step:',
           ['cottage-before-3.jpeg', 'cottage-exterior-awning.jpeg'],
           'The main room: the plywood counter and open shelving became a full kitchen, with new flooring, paint and lighting throughout.',
           ['cottage-before-4.jpeg', 'cottage-kitchen-wide.jpeg'],
           ['cottage-before-6.jpeg', 'cottage-main-room.jpeg'],
-          'The bathroom, rebuilt from the subfloor up:',
+          'The bathroom, rebuilt from the framing all the way to the tile work:',
           ['cottage-before-5.jpeg', 'cottage-bathroom-vanity.jpeg'],
-          'And the lower level, from an unfinished space with exposed wiring to a working laundry room:',
+          'And the lower level, from an unfinished space with exposed wiring to a working laundry room/storage area:',
           ['cottage-laundry-workshop.jpeg'],
         ],
       },
@@ -700,7 +699,7 @@ export const projects = [
       { todo: 'Why you built it, and how many drawers and bins it has.' },
     ],
     chapters: [
-      { title: 'In CAD', blocks: [{ todo: 'SolidWorks screenshots of the bins and the drawer layout.' }] },
+      { title: 'CAD Mockup', blocks: [{ todo: 'SolidWorks screenshots of the bins and the drawer layout.' }] },
       { title: 'Printing & fitting', blocks: [{ todo: 'How the bins were made (printer, material) and fitted to each tool.' }] },
       { title: 'Finished', blocks: [{ todo: 'Photos of the filled drawers.' }] },
     ],
