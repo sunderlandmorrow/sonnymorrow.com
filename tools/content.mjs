@@ -678,7 +678,7 @@ export const projects = [
       },
     ],
     beforeAfter: { before: 'cottage-slider-before.jpeg', after: 'cottage-slider-after.jpeg', pos: 30 },
-    outcome: 'There were a million details in this project but it is hard to capture them all. The attention to detail was critical for us becuase we wanted the cottage to not only sell itself in the rental market but to stand the test of time and be a reliable structure without any issues. Something that could bring in passive income and have it stay passive. Done once, done right. The cottage is now renting out and our tenant loves it.',
+    outcome: 'There were countless details that went into this project, far more than I could capture here. Attention to detail was essential because we wanted to create more than just an attractive rental. We wanted a well-built, dependable structure that would stand the test of time and require minimal maintenance. The goal was simple: create an investment that could generate passive income without becoming a constant source of work. Done once, done right. The cottage is now rented, and we\'re happy to say our tenant loves it.',
   },
 
   {
