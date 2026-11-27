@@ -575,7 +575,6 @@ export const projects = [
           ['cottage-before-2.jpeg', 'cottage-before-3.jpeg'],
           'Inside, the living space was very makeshift. The realtor did a good job of making it look presentable but make no mistake it was really in poor shape.',
           ['cottage-before-4.jpeg', 'cottage-before-6.jpeg'],
-          'The bathroom had holes cut in the drywall, and the lower level (now the laundry room) was unfinished concrete with exposed wiring and plumbing.',
         ],
       },
       {
