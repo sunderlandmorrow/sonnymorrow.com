@@ -569,16 +569,16 @@ export const projects = [
       ['Design', 'SolidWorks'],
     ],
     intro: [
-      'A cottage restoration for a rental property. I modeled the work in SolidWorks before starting.',
+      'A cottage renovation undertaken with my business partner on our investment rental property in Grass Valley, CA. Our goal was to transform this structure into a fully self contained living space for a single occupant, with a first floor laundry and storage area and a second-floor dedicated to the primary living space.',
       { todo: 'Where the cottage is, what shape it was in, and what the restoration covered.' },
     ],
     chapters: [
       {
         title: 'In CAD',
         blocks: [
-          'Before building the new covered entry, I modeled the cottage in SolidWorks to size the awning and check how it would look on the front of the house.',
+          'Our first step was to quickly mock up the structure. My business partner called out measurements while I drew up the building in SOLIDWORKS. We wanted to add a front awning and ensure the proportions looked okay. Also we wanted to render the structure to see what color suited it best.',
           ['cottage-solidworks-model.jpeg', 'cottage-solidworks-model-laundry.jpeg', 'cottage-solidworks-model-back.jpeg'],
-          'I then rendered the model with siding, trim and roofing to see the finished look before we built it.',
+          'Here is our end goal:',
           ['cottage-render-front34.jpeg'],
           ['cottage-render-awning.jpeg', 'cottage-render-lower34.jpeg'],
         ],

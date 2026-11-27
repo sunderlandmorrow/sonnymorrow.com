@@ -18,19 +18,77 @@ const rebuild = () => run(process.execPath, [path.join(root, 'tools', 'build.mjs
 const lit = (s) => `'${s.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n')}'`;
 const count = (hay, needle) => hay.split(needle).length - 1;
 
-async function saveEdit({ before, after, all }) {
+const buildFile = path.join(root, 'tools', 'build.mjs');
+const logFile = path.join(root, 'tools', 'unsaved-edits.txt');
+const inner = (s) => lit(s).slice(1, -1);                       // as written inside '…' in content.mjs
+const htmlEsc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// Write the new files, rebuild, and undo everything if the build breaks.
+async function apply(changes) {
+  const old = changes.map(([f]) => [f, fs.readFileSync(f, 'utf8')]);
+  for (const [f, s] of changes) fs.writeFileSync(f, s);
+  const b = await rebuild();
+  if (b.ok) return null;
+  for (const [f, s] of old) fs.writeFileSync(f, s);
+  await rebuild();
+  return 'Build failed, change undone: ' + b.out.slice(0, 300);
+}
+
+// Text that's put together from several pieces (e.g. "Personal project · Kicker") or that lives in the
+// page layout (build.mjs) isn't found whole. Find the part that changed, then grow it outward word by
+// word until it matches exactly one place in content.mjs or build.mjs, and change just that.
+function findPiece(before, after, srcs) {
+  let i = 0;
+  while (i < before.length && i < after.length && before[i] === after[i]) i++;
+  let j = 0;
+  while (j < before.length - i && j < after.length - i && before[before.length - 1 - j] === after[after.length - 1 - j]) j++;
+  let a = i, b = before.length - j;                               // changed part of `before` is [a, b)
+  const isW = (c) => c && /[\p{L}\p{N}'’-]/u.test(c);
+  while (a > 0 && isW(before[a - 1])) a--;                        // snap to whole words
+  while (b < before.length && isW(before[b])) b++;
+  for (let step = 0; step < 400; step++) {
+    const piece = before.slice(a, b);
+    const tail = before.length - b;
+    const newPiece = after.slice(a, after.length - tail);
+    if (piece.trim().length >= 3) {
+      const hits = [];
+      for (const [file, src] of srcs) {
+        const forms = file === contentFile ? [[inner(piece), inner(newPiece)]] : htmlEsc(piece) === piece ? [[piece, newPiece]] : [[piece, newPiece], [htmlEsc(piece), htmlEsc(newPiece)]];
+        for (const [from, to] of forms) { const n = count(src, from); if (n) hits.push({ file, from, to, n }); }
+      }
+      const total = hits.reduce((s, h) => s + h.n, 0);
+      if (total === 1) return hits[0];
+      if (total === 0) return null;                               // growing further can only match less
+    }
+    if (a === 0 && b === before.length) return null;
+    if (a > 0) { a--; while (a > 0 && isW(before[a - 1])) a--; }
+    if (b < before.length) { b++; while (b < before.length && isW(before[b])) b++; }
+  }
+  return null;
+}
+
+async function saveEdit({ before, after, all, page }) {
   before = String(before ?? '').trim(); after = String(after ?? '').trim();
   if (!before || !after) return { ok: false, message: 'Text can’t be empty.' };
   if (before === after) return { ok: true, message: 'No change.' };
   const src = fs.readFileSync(contentFile, 'utf8');
   const from = lit(before);
   const n = count(src, from);
-  if (n === 0) return { ok: false, notFound: true, message: 'This text is part of the page layout, not the content file — ask Claude to change it.' };
   if (n > 1 && !all) return { ok: false, multiple: n, message: `This exact text appears ${n} times on the site.` };
-  fs.writeFileSync(contentFile, src.split(from).join(lit(after)));
-  const b = await rebuild();
-  if (!b.ok) { fs.writeFileSync(contentFile, src); await rebuild(); return { ok: false, message: 'Build failed, change undone: ' + b.out.slice(0, 300) }; }
-  return { ok: true, message: n > 1 ? `Saved (${n} places).` : 'Saved.' };
+  if (n >= 1) {
+    const err = await apply([[contentFile, src.split(from).join(lit(after))]]);
+    if (err) return { ok: false, message: err };
+    return { ok: true, message: n > 1 ? `Saved (${n} places).` : 'Saved.' };
+  }
+  const hit = findPiece(before, after, [[contentFile, src], [buildFile, fs.readFileSync(buildFile, 'utf8')]]);
+  if (hit) {
+    const s = fs.readFileSync(hit.file, 'utf8');
+    const err = await apply([[hit.file, s.replace(hit.from, () => hit.to)]]);
+    if (!err) return { ok: true, message: 'Saved.' };
+  }
+  // Couldn't place it automatically — keep it so Claude can apply it, and nothing typed is lost.
+  fs.appendFileSync(logFile, `--- ${new Date().toISOString()}  ${page || ''}\nBEFORE: ${before}\nAFTER:  ${after}\n\n`);
+  return { ok: false, kept: true, message: 'Couldn’t save this one automatically. It’s kept in tools/unsaved-edits.txt — ask Claude to apply it.' };
 }
 
 async function publish() {

@@ -2,7 +2,7 @@
 // Turn on "Edit text", double-click any text, type, then press Enter (or click away) to save.
 // Esc cancels. Shift+Enter is ignored (text blocks are single paragraphs).
 (() => {
-  const TEXT = 'h1, h2, h3, p, li, dd, dt, figcaption, .kicker, .hero-tag, .eyebrow, .more, .num';
+  const TEXT = 'h1, h2, h3, p, li, dd, dt, figcaption, .kicker, .hero-tag, .eyebrow, .more, .num, .todo, .hint, .btn, .wordmark, .site-header nav a, .pager-text span, .pager-text strong, .pager-text em, .badge, .ba-label, .toc a, .footer-row span, .inline-link, small';
   let on = false;
 
   const css = document.createElement('style');
@@ -118,11 +118,12 @@
       el.removeEventListener('keydown', keys);
       const after = el.textContent.replace(/\s+/g, ' ').trim();
       if (!save || after === before) { el.textContent = before; unwrap(el); return; }
-      let r = await api('/__save', { before, after });
+      const page = location.pathname;
+      let r = await api('/__save', { before, after, page });
       if (r.multiple && confirm(`"${before.slice(0, 60)}${before.length > 60 ? '…' : ''}" appears ${r.multiple} times on the site. Change all of them?`)) {
-        r = await api('/__save', { before, after, all: true });
+        r = await api('/__save', { before, after, all: true, page });
       }
-      if (!r.ok) el.textContent = before;
+      if (!r.ok && !r.kept) el.textContent = before;
       unwrap(el);
       toast(r.message || (r.ok ? 'Saved.' : 'Not saved.'), !r.ok);
     };
