@@ -67,10 +67,26 @@ function findPiece(before, after, srcs) {
   return null;
 }
 
-async function saveEdit({ before, after, all, page }) {
+// Typing into the "To add" box under "The result" writes that project's own outcome
+// (the box itself is shared layout text, so editing it in place would change every project).
+async function saveOutcome(slug, text) {
+  const lines = fs.readFileSync(contentFile, 'utf8').split('\n');
+  const start = lines.findIndex((l) => l.includes(`slug: ${lit(slug)}`));
+  if (start < 0) return { ok: false, message: 'Project not found.' };
+  let end = lines.findIndex((l, k) => k > start && /^\s*slug:\s*'/.test(l));
+  if (end < 0) end = lines.length;
+  const i = lines.findIndex((l, k) => k > start && k < end && /^\s*outcome:\s*'.*',\s*$/.test(l));
+  const line = `    outcome: ${lit(text)},`;
+  if (i >= 0) lines[i] = line; else lines.splice(start + 1, 0, line);
+  const err = await apply([[contentFile, lines.join('\n')]]);
+  return err ? { ok: false, message: err } : { ok: true, message: 'Saved.' };
+}
+
+async function saveEdit({ before, after, all, page, outcomeOf }) {
   before = String(before ?? '').trim(); after = String(after ?? '').trim();
   if (!before || !after) return { ok: false, message: 'Text can’t be empty.' };
   if (before === after) return { ok: true, message: 'No change.' };
+  if (outcomeOf) return saveOutcome(String(outcomeOf), after);
   const src = fs.readFileSync(contentFile, 'utf8');
   const from = lit(before);
   const n = count(src, from);

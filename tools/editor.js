@@ -151,7 +151,8 @@
       const after = el.textContent.replace(/\s+/g, ' ').trim();
       if (!save || after === before) { el.textContent = before; unwrap(el); return; }
       const page = location.pathname;
-      let r = await api('/__save', { before, after, page });
+      const outcomeOf = el.closest('.outcome .todo') ? slug : undefined;
+      let r = await api('/__save', { before, after, page, outcomeOf });
       if (r.multiple && confirm(`"${before.slice(0, 60)}${before.length > 60 ? '…' : ''}" appears ${r.multiple} times on the site. Change all of them?`)) {
         r = await api('/__save', { before, after, all: true, page });
       }
