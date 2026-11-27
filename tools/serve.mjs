@@ -141,6 +141,19 @@ async function removeImage({ slug, file, index }) {
   return err ? { ok: false, message: err } : { ok: true, message: 'Photo removed.' };
 }
 
+// Remove a whole paragraph: the line in content.mjs that is exactly that text.
+async function removeText({ text }) {
+  text = String(text || '').trim();
+  if (!text) return { ok: false, message: 'Missing text.' };
+  const lines = fs.readFileSync(contentFile, 'utf8').split('\n');
+  const want = lit(text);
+  const hits = lines.map((l, k) => (l.trim() === want + ',' || l.trim() === want ? k : -1)).filter((k) => k >= 0);
+  if (hits.length !== 1) return { ok: false, message: hits.length ? 'This text appears more than once — ask Claude to remove it.' : 'This text can’t be removed here — ask Claude.' };
+  lines.splice(hits[0], 1);
+  const err = await apply([[contentFile, lines.join('\n')]]);
+  return err ? { ok: false, message: err } : { ok: true, message: 'Text removed.' };
+}
+
 async function publish() {
   const st = await run('git', ['status', '--porcelain']);
   if (!st.out) return { ok: true, message: 'Nothing new to publish.' };
@@ -164,6 +177,7 @@ const server = http.createServer(async (req, res) => {
     if (url.pathname === '/__save') return json(res, 200, await saveEdit(await readBody(req)));
     if (url.pathname === '/__publish') return json(res, 200, await publish());
     if (url.pathname === '/__remove-image') return json(res, 200, await removeImage(await readBody(req)));
+    if (url.pathname === '/__remove-text') return json(res, 200, await removeText(await readBody(req)));
     return json(res, 404, { ok: false });
   }
   if (url.pathname === '/__editor.js') { res.writeHead(200, { 'content-type': types['.js'], 'cache-control': 'no-store' }); return fs.createReadStream(path.join(root, 'tools', 'editor.js')).pipe(res); }

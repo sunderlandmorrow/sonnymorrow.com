@@ -602,11 +602,11 @@ export const projects = [
         ],
       },
       {
-        title: 'Floor framing',
+        title: 'Bathroom framing repair',
         blocks: [
-          'Part of the floor had sagged. I opened it up to get at the framing underneath.',
+          'The entire bathroom area had sagged significantly over time due to the cantilevered shape of the structure. It was paramount that we got the framing level for our new subfloor and subsequent tile.',
           ['cottage-floor-opened.jpeg', 'cottage-floor-level.jpeg'],
-          'From the laundry room below, I jacked the floor back up to level, then added new framing alongside the old joists to hold it there.',
+          'From the laundry room below, we jacked the floor back up to level, then added new 4x6 beams alongside the old joists to hold it permanently level. We used 4 beams in total and we are confident our repair will stand the test of time.',
           ['cottage-floor-jack.jpeg', 'cottage-floor-jack-above.jpeg'],
           ['cottage-floor-sistered.jpeg'],
         ],
@@ -616,16 +616,14 @@ export const projects = [
         blocks: [
           'Inside, the walls were patched and primed, and new plank flooring went down throughout.',
           ['cottage-flooring-timelapse.mp4'],
-          ['cottage-interior-floor.jpeg'],
         ],
       },
       {
         title: 'Bathroom',
         blocks: [
-          'The shower was built from scratch: a drain cut into a new plywood subfloor, then cement board, then tile set with leveling clips to keep it flat.',
+          'The shower was built from scratch, including a concrete shower base. The waterproofing we had installed passed during a 48 hour leak test, and was ready for tile.',
           ['cottage-shower-tile-clips.jpeg'],
-          ['cottage-shower-finished.jpeg'],
-          'The finished bathroom: a glass shower enclosure, a vanity, and glass shelving under the window.',
+          'The finished shower: a glass shower door, glass shelving, and a light blue tile floor pairing beautifully with the sage green subway tile.',
           ['cottage-shower-door.jpeg', 'cottage-shower-tile.jpeg'],
           ['cottage-bathroom-vanity.jpeg', 'cottage-bathroom-shelves.jpeg'],
         ],
@@ -640,7 +638,7 @@ export const projects = [
       {
         title: 'Kitchen',
         blocks: [
-          'The kitchen went from a temporary counter to a full run of cabinets, a new range, and a tile backsplash.',
+          'The kitchen was designed with compactness in mind. We wanted everything to neatly fit the back wall and have a nice window to look out of. We installed a row of cabinets my wife made (she is a cabinet maker), a new 120V stove, and a sky blue tile backsplash.',
           ['cottage-kitchen-cabinets-rough.jpeg', 'cottage-kitchen-cabinets.jpeg'],
           ['cottage-kitchen-backsplash.jpeg', 'cottage-kitchen-counter.jpeg'],
           ['cottage-kitchen-wide.jpeg'],
@@ -651,11 +649,10 @@ export const projects = [
       {
         title: 'Finished',
         blocks: [
-          'The finished cottage: a new covered entry over the front door, and the two-story section in its new blue paint.',
           ['cottage-exterior-hillside.jpeg', 'cottage-exterior-laundry-path.jpeg'],
           ['cottage-exterior-awning.jpeg'],
           ['cottage-exterior-porch.jpeg', 'cottage-exterior-finished.jpeg'],
-          'Inside, the main room has the kitchen along one wall, a closet and the loft at the back, and exposed beams overhead with a ductless mini-split for heating and cooling.',
+          'Inside, the main room has the kitchen along one wall, a closet and the loft at the back, and exposed beams overhead with a ductless mini split for heating and cooling.',
           ['cottage-main-room.jpeg', 'cottage-loft-closet.jpeg'],
           ['cottage-beams-minisplit.jpeg', 'cottage-beam-lights.jpeg', 'cottage-closet-shelf.jpeg'],
           'Downstairs, the laundry room/storage area:',

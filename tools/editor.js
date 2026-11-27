@@ -23,6 +23,10 @@
     .ed-x { display: none; position: absolute; top: 8px; right: 8px; z-index: 5; width: 34px; height: 34px; border: 2px solid #fff; border-radius: 50%; background: #d42a1e; color: #fff; font: 700 22px/1 system-ui, sans-serif; cursor: pointer; box-shadow: 0 2px 10px rgb(0 0 0 / .45); padding: 0; }
     .ed-x:hover { background: #a81c12; transform: scale(1.08); }
     body.ed-on .ed-x { display: block; }
+    .ed-p { position: relative; }
+    .ed-x-p { top: 50%; right: auto; left: -34px; width: 28px; height: 28px; font-size: 18px; margin-top: -14px; }
+    body.ed-on .ed-x-p { display: none; }
+    body.ed-on .ed-p:hover .ed-x-p { display: block; }
     [contenteditable] { outline: 2px solid #d0703f !important; outline-offset: 3px; background: rgb(208 112 63 / .08); }
   `;
   document.head.append(css);
@@ -100,7 +104,24 @@
       });
       gi.append(x);
     }
-    try { const y = sessionStorage.getItem('ed-scroll'); if (y) { sessionStorage.removeItem('ed-scroll'); requestAnimationFrame(() => scrollTo(0, +y)); toast('Photo removed.'); } } catch {}
+    // Same red × on each paragraph (project text) to delete it.
+    for (const p of document.querySelectorAll('.chapter > p:not(.hint), .p-lede > p')) {
+      if (p.querySelector('a')) continue;
+      p.classList.add('ed-p');
+      const x = document.createElement('button');
+      x.type = 'button'; x.className = 'ed-x ed-x-p'; x.title = 'Remove this paragraph'; x.textContent = '×';
+      x.addEventListener('click', async (e) => {
+        e.preventDefault(); e.stopPropagation();
+        const text = [...p.childNodes].filter((n) => n !== x).map((n) => n.textContent).join('').trim();
+        if (!confirm(`Remove this paragraph?\n\n${text.slice(0, 200)}${text.length > 200 ? '…' : ''}`)) return;
+        toast('Removing…');
+        const r = await api('/__remove-text', { text });
+        if (r.ok) { try { sessionStorage.setItem('ed-scroll', String(scrollY)); sessionStorage.setItem('ed-msg', r.message); } catch {} location.reload(); }
+        else toast(r.message, true);
+      });
+      p.append(x);
+    }
+    try { const y = sessionStorage.getItem('ed-scroll'); if (y) { sessionStorage.removeItem('ed-scroll'); requestAnimationFrame(() => scrollTo(0, +y)); toast(sessionStorage.getItem('ed-msg') || 'Photo removed.'); sessionStorage.removeItem('ed-msg'); } } catch {}
   }
 
   // While editing, links don't navigate (so you can double-click text inside cards and links).
