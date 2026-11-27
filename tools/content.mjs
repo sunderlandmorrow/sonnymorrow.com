@@ -565,7 +565,8 @@ export const projects = [
     summary:
       'A uniquely shaped 1940s cottage that my business partner and I restored on our rental property. We completely remodeled the interior and exterior, bringing the structure back to life while upgrading all of its mechanical systems. It is now fully restored and serving as a rental home in Grass Valley, CA.',
     intro: [
-      'A cottage renovation undertaken with my business partner on our investment rental property in Grass Valley, CA. Our goal was to transform this structure into a fully self contained living space for a single occupant, with a first floor laundry and storage area and a second floor dedicated to the primary living space.',    ],
+      'A cottage renovation undertaken with my business partner on our investment rental property in Grass Valley, CA. Our goal was to transform this structure into a fully self contained living space for a single occupant, with a first floor laundry and storage area and a second floor dedicated to the primary living space.',
+    ],
     chapters: [
       {
         title: 'As found',
