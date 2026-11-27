@@ -574,6 +574,18 @@ export const projects = [
     ],
     chapters: [
       {
+        title: 'As found',
+        blocks: [
+          'These are the listing photos from when we bought the property. The main house adjacent to the cottage is a different project that is underway. As you can see, the cottage on the left is in a disheveled state here.',
+          ['cottage-before-1.jpeg'],
+          ['cottage-before-2.jpeg', 'cottage-before-3.jpeg'],
+          'Inside, the living space was very makeshift. The realtor did a good job of making it look presentable but make no mistake it was really in poor shape.',
+          ['cottage-before-4.jpeg', 'cottage-before-6.jpeg'],
+          'The bathroom had holes cut in the drywall, and the lower level (now the laundry room) was unfinished concrete with exposed wiring and plumbing.',
+          ['cottage-before-5.jpeg', 'cottage-before-7.jpeg'],
+        ],
+      },
+      {
         title: 'In CAD',
         blocks: [
           'Our first step was to quickly mock up the structure. My business partner called out measurements while I drew up the building in SOLIDWORKS. We wanted to add a front awning and ensure the proportions looked okay. Also we wanted to render the structure to see what color suited it best.',
@@ -584,21 +596,9 @@ export const projects = [
         ],
       },
       {
-        title: 'As found',
-        blocks: [
-          'These are the listing photos from when we bought the property. The cottage was in rough shape: the red siding was faded and peeling, and the grass had grown up to the windows.',
-          ['cottage-before-1.jpeg'],
-          ['cottage-before-2.jpeg', 'cottage-before-3.jpeg'],
-          'Inside, the main room had a makeshift kitchen built from open shelving and a plywood counter, with bare subfloor showing underneath.',
-          ['cottage-before-4.jpeg', 'cottage-before-6.jpeg'],
-          'The bathroom had holes cut in the drywall, and the lower level (now the laundry room) was unfinished concrete with exposed wiring and plumbing.',
-          ['cottage-before-5.jpeg', 'cottage-before-7.jpeg'],
-        ],
-      },
-      {
         title: 'Siding & paint',
         blocks: [
-          'The exterior came first. We sanded the old red paint off the siding, down to bare wood in most places.',
+          'The exterior came first. We sanded the old red paint off the siding, down to bare wood in most places. Some pieces were too far gone and we had to replace some. The prep work was extreme to say the least. We were aiming for an oil based paint job that would last years and years. The prep work was extreme to say the least. We were aiming for an oil based paint job that would last years and years.',
           ['cottage-siding-stripped.jpeg', 'cottage-siding-sanded.jpeg'],
           'Then the whole cottage got a coat of white primer. This time-lapse covers a day of priming:',
           ['cottage-priming-timelapse.mp4'],
@@ -657,13 +657,6 @@ export const projects = [
           ['cottage-kitchen-finished.jpeg', 'cottage-kitchen-range.jpeg'],
           ['cottage-kitchen-wide.jpeg'],
           ['cottage-kitchen-sink.jpeg', 'cottage-kitchen-appliances.jpeg', 'cottage-kitchen-drawer.jpeg'],
-        ],
-      },
-      {
-        title: 'Drainage',
-        blocks: [
-          'To keep water away from the foundation, we dug a trench around the cottage and laid drain pipe.',
-          ['cottage-drainage-trench.jpeg', 'cottage-drainage-pipe.jpeg'],
         ],
       },
       {

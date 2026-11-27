@@ -19,6 +19,10 @@
     body.ed-noimg .p-hero { height: auto !important; min-height: 0 !important; margin-top: 0 !important; padding-top: 90px; background: #2b241d; }
     body.ed-noimg .p-hero-text { position: static !important; }
     body.ed-noimg .hero { grid-template-columns: 1fr !important; }
+    .gi { position: relative; }
+    .ed-x { display: none; position: absolute; top: 8px; right: 8px; z-index: 5; width: 34px; height: 34px; border: 2px solid #fff; border-radius: 50%; background: #d42a1e; color: #fff; font: 700 22px/1 system-ui, sans-serif; cursor: pointer; box-shadow: 0 2px 10px rgb(0 0 0 / .45); padding: 0; }
+    .ed-x:hover { background: #a81c12; transform: scale(1.08); }
+    body.ed-on .ed-x { display: block; }
     [contenteditable] { outline: 2px solid #d0703f !important; outline-offset: 3px; background: rgb(208 112 63 / .08); }
   `;
   document.head.append(css);
@@ -71,9 +75,37 @@
     toast(r.message, !r.ok);
   });
 
+  // Red X on every photo in a project page's photo groups (shown while editing) to remove it.
+  const slug = (location.pathname.match(/\/projects\/([^/]+)\//) || [])[1];
+  if (slug) {
+    const fileOf = (gi) => {
+      const m = gi.querySelector('video, img');
+      return m ? decodeURIComponent((m.getAttribute('src') || '').split('/').pop().split('?')[0]) : '';
+    };
+    const items = [...document.querySelectorAll('.gallery .gi')];
+    const seen = {};
+    for (const gi of items) {
+      const file = fileOf(gi);
+      if (!file) continue;
+      const index = (seen[file] = (seen[file] ?? -1) + 1);
+      const x = document.createElement('button');
+      x.type = 'button'; x.className = 'ed-x'; x.title = 'Remove this photo'; x.textContent = '×';
+      x.addEventListener('click', async (e) => {
+        e.preventDefault(); e.stopPropagation();
+        if (!confirm(`Remove this photo from the page?\n${file}`)) return;
+        toast('Removing…');
+        const r = await api('/__remove-image', { slug, file, index });
+        if (r.ok) { try { sessionStorage.setItem('ed-scroll', String(scrollY)); } catch {} location.reload(); }
+        else toast(r.message, true);
+      });
+      gi.append(x);
+    }
+    try { const y = sessionStorage.getItem('ed-scroll'); if (y) { sessionStorage.removeItem('ed-scroll'); requestAnimationFrame(() => scrollTo(0, +y)); toast('Photo removed.'); } } catch {}
+  }
+
   // While editing, links don't navigate (so you can double-click text inside cards and links).
   document.addEventListener('click', (e) => {
-    if (!on || e.target.closest('.ed-bar')) return;
+    if (!on || e.target.closest('.ed-bar, .ed-x')) return;
     if (e.target.closest('a, [data-lb]')) { e.preventDefault(); e.stopPropagation(); }
   }, true);
 

@@ -91,6 +91,40 @@ async function saveEdit({ before, after, all, page }) {
   return { ok: false, kept: true, message: 'Couldn’t save this one automatically. It’s kept in tools/unsaved-edits.txt — ask Claude to apply it.' };
 }
 
+// Remove one photo from a project page. `index` is which appearance of that file on the page
+// (the same photo can be in a chapter and again in "Then & now"). The image file itself is kept.
+async function removeImage({ slug, file, index }) {
+  slug = String(slug || ''); file = String(file || ''); index = +index || 0;
+  if (!slug || !file) return { ok: false, message: 'Missing photo.' };
+  const src = fs.readFileSync(contentFile, 'utf8');
+  const lines = src.split('\n');
+  const start = lines.findIndex((l) => l.includes(`slug: ${lit(slug)}`));
+  if (start < 0) return { ok: false, message: 'Project not found.' };
+  let end = lines.findIndex((l, k) => k > start && /^\s*slug:\s*'/.test(l));
+  if (end < 0) end = lines.length;
+  const needle = lit(file);
+  let seen = 0, at = -1;
+  for (let k = start; k < end; k++) {
+    if (/^\s*(cover|hero|beforeAfter)\s*:/.test(lines[k])) continue;   // only photos in the page's photo groups
+    const n = count(lines[k], needle);
+    if (seen + n > index) { at = k; break; }
+    seen += n;
+  }
+  if (at < 0) return { ok: false, message: 'Couldn’t find that photo in the content file.' };
+  // Drop the nth-on-this-line copy along with its comma.
+  let line = lines[at], pos = -1;
+  for (let m = 0; m <= index - seen; m++) pos = line.indexOf(needle, pos + 1);
+  let a = pos, b = pos + needle.length;
+  const after = line.slice(b).match(/^\s*,\s*/);
+  if (after) b += after[0].length;
+  else { const before = line.slice(0, a).match(/,\s*$/); if (before) a -= before[0].length; }
+  line = line.slice(0, a) + line.slice(b);
+  const empty = /^\s*(\[\s*\]|\{\s*stack:\s*\[\s*\]\s*\})\s*,?\s*$/.test(line);
+  if (empty) lines.splice(at, 1); else lines[at] = line;
+  const err = await apply([[contentFile, lines.join('\n')]]);
+  return err ? { ok: false, message: err } : { ok: true, message: 'Photo removed.' };
+}
+
 async function publish() {
   const st = await run('git', ['status', '--porcelain']);
   if (!st.out) return { ok: true, message: 'Nothing new to publish.' };
@@ -113,6 +147,7 @@ const server = http.createServer(async (req, res) => {
     if (req.headers['x-portfolio-editor'] !== '1') return json(res, 403, { ok: false, message: 'Forbidden' });
     if (url.pathname === '/__save') return json(res, 200, await saveEdit(await readBody(req)));
     if (url.pathname === '/__publish') return json(res, 200, await publish());
+    if (url.pathname === '/__remove-image') return json(res, 200, await removeImage(await readBody(req)));
     return json(res, 404, { ok: false });
   }
   if (url.pathname === '/__editor.js') { res.writeHead(200, { 'content-type': types['.js'], 'cache-control': 'no-store' }); return fs.createReadStream(path.join(root, 'tools', 'editor.js')).pipe(res); }
