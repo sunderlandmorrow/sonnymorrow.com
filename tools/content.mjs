@@ -582,7 +582,6 @@ export const projects = [
           'Inside, the living space was very makeshift. The realtor did a good job of making it look presentable but make no mistake it was really in poor shape.',
           ['cottage-before-4.jpeg', 'cottage-before-6.jpeg'],
           'The bathroom had holes cut in the drywall, and the lower level (now the laundry room) was unfinished concrete with exposed wiring and plumbing.',
-          ['cottage-before-5.jpeg', 'cottage-before-7.jpeg'],
         ],
       },
       {
@@ -624,7 +623,6 @@ export const projects = [
         title: 'Walls & flooring',
         blocks: [
           'Inside, the walls were patched and primed, and new plank flooring went down throughout.',
-          ['cottage-interior-walls-primed.jpeg'],
           ['cottage-flooring-timelapse.mp4'],
           ['cottage-interior-floor.jpeg'],
         ],
@@ -633,7 +631,7 @@ export const projects = [
         title: 'Bathroom',
         blocks: [
           'The shower was built from scratch: a drain cut into a new plywood subfloor, then cement board, then tile set with leveling clips to keep it flat.',
-          ['cottage-shower-drain.jpeg', 'cottage-shower-tile-clips.jpeg'],
+          ['cottage-shower-tile-clips.jpeg'],
           ['cottage-shower-finished.jpeg'],
           'The finished bathroom: a glass shower enclosure, a vanity, and glass shelving under the window.',
           ['cottage-shower-door.jpeg', 'cottage-shower-tile.jpeg'],
@@ -644,7 +642,6 @@ export const projects = [
         title: 'Loft & ladder',
         blocks: [
           'A sleeping loft sits over the bathroom and closet, with a ladder and railing made from black iron pipe.',
-          ['cottage-ladder.jpeg', 'cottage-loft-railing.jpeg'],
           ['cottage-loft-below.jpeg', 'cottage-loft-floor.jpeg'],
         ],
       },
@@ -654,7 +651,6 @@ export const projects = [
           'The kitchen went from a temporary counter to a full run of cabinets, a new range, and a tile backsplash.',
           ['cottage-kitchen-cabinets-rough.jpeg', 'cottage-kitchen-cabinets.jpeg'],
           ['cottage-kitchen-backsplash.jpeg', 'cottage-kitchen-counter.jpeg'],
-          ['cottage-kitchen-finished.jpeg', 'cottage-kitchen-range.jpeg'],
           ['cottage-kitchen-wide.jpeg'],
           ['cottage-kitchen-sink.jpeg', 'cottage-kitchen-appliances.jpeg', 'cottage-kitchen-drawer.jpeg'],
         ],
@@ -666,8 +662,6 @@ export const projects = [
           ['cottage-exterior-hillside.jpeg', 'cottage-exterior-laundry-path.jpeg'],
           ['cottage-exterior-awning.jpeg'],
           ['cottage-exterior-porch.jpeg', 'cottage-exterior-finished.jpeg'],
-          ['cottage-interior-finished.jpeg'],
-          ['cottage-two-story-finished.jpeg'],
           'Inside, the main room has the kitchen along one wall, a closet and the loft at the back, and exposed beams overhead with a ductless mini-split for heating and cooling.',
           ['cottage-main-room.jpeg', 'cottage-loft-closet.jpeg'],
           ['cottage-beams-minisplit.jpeg', 'cottage-beam-lights.jpeg', 'cottage-closet-shelf.jpeg'],
@@ -679,7 +673,6 @@ export const projects = [
         title: 'Then & now',
         blocks: [
           'The listing photos from when we bought the property, next to the same views today.',
-          ['cottage-before-after-split.jpeg'],
           'The lower-level side, from the old stairs:',
           ['cottage-before-1.jpeg', 'cottage-exterior-laundry-path.jpeg'],
           'The front entry, now with a covered awning, new door and new step:',
@@ -690,7 +683,7 @@ export const projects = [
           'The bathroom, rebuilt from the subfloor up:',
           ['cottage-before-5.jpeg', 'cottage-bathroom-vanity.jpeg'],
           'And the lower level, from an unfinished space with exposed wiring to a working laundry room:',
-          ['cottage-before-7.jpeg', 'cottage-laundry-workshop.jpeg'],
+          ['cottage-laundry-workshop.jpeg'],
         ],
       },
     ],
